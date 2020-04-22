@@ -34,16 +34,12 @@ Simple markdown conversion with some cool features, such as math rendering
        ["-v" "--version VERSION" "Project version - if not given will be taken from project.clj"]
        ["-D" "--desc DESC" "Project description - if not given will be taken from project.clj"]
        ["-a" "--deps DEPS" "Project dependencies in the form <group1>:<artifact1>:<version1>;<group2>...
-                                           If not given will be taken from project.clj"]
-       ["-c" "--css CSS" "Additional css resources <resource1>;<resource2>;...
-                                           If not given will be taken from project.clj."]
-       ["-j" "--js JS" "Additional javascript resources <resource1>;<resource2>;...
-                                           If not given will be taken from project.clj"]
+                                     If not given will be taken from project.clj"]
        ["-m" "--multi" "Generate each namespace documentation as a separate file"  :default true]
        ["-l" "--leiningen" "Generate the documentation for a Leiningen project file."]
        ["-e" "--exclude EXCLUDE"
         "Exclude source file(s) from the document generation process <file1>;<file2>...
-                                           If not given will be taken from project.clj"]
+                                     If not given will be taken from project.clj"]
        ["-h" "--help" "Show this help"]])
     ```
 
@@ -69,13 +65,9 @@ Default generation: given a collection of filepaths in a project, find the .clj
             files arguments
             sources (distinct (mc/format-sources (seq files)))
             sources (if leiningen (cons leiningen sources) sources)]
-        (println sources)
         (when help
           (println (:summary user-parsed-options)))
-        (if-not sources
-          (when-not help
-            (println "Wrong number of arguments passed to Marginalia.")
-            (println (:summary user-parsed-options)))
+        (if (and sources (not help))
           (binding [*docs* dir]
             (let [project-clj (when (.exists (io/file "project.clj"))
                                 (mc/parse-project-file))
@@ -104,7 +96,10 @@ Default generation: given a collection of filepaths in a project, find the .clj
                 (marginalia-md.markdown/multidoc! *docs* sources opts)
                 (marginalia-md.markdown/uberdoc!  (str *docs* "/" file) sources opts))
               (println "Done generating your documentation in" *docs*)
-              (println ""))))))
+              (println "")))
+          (when-not help
+            (println "Wrong number of arguments passed to Marginalia.")
+            (println (:summary user-parsed-options))))))
     ```
 
 ## -main

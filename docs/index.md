@@ -9,7 +9,8 @@ create documentation.
 ``` bash
 pip3 install mkdocs-material
 
-clj -m run-marginalia-md src # parse your src fodler and generate the files into ./docs
+# parse your src fodler and generate the files into ./docs
+find src -type "f" -name "*.clj*" | xargs clj -m marginalia-md.core
 
 mkdocs serve # dev
 mkdocs build # releas
