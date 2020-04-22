@@ -250,11 +250,16 @@ create documentation.</p>
 <h1 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h1>
 <div class="highlight"><pre><span></span><code>pip3 install mkdocs-material
 
-clj -m run-marginalia-md src <span class="c1"># parse your src fodler and generate the files into ./docs</span>
+<span class="c1"># parse your src fodler and generate the files into ./docs</span>
+find src -type <span class="s2">&quot;f&quot;</span> -name <span class="s2">&quot;*.clj*&quot;</span> <span class="p">|</span> xargs clj -m marginalia-md.core
 
 mkdocs serve <span class="c1"># dev</span>
-mkdocs build <span class="c1"># releas</span>
+mkdocs build <span class="c1"># release</span>
 </code></pre></div>
+
+<h1 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h1>
+<p>Copyright (C) 2020 David Pham</p>
+<p>Distributed under the Eclipse Public License, the same as Clojure.</p>
                 
               
               

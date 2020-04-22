@@ -244,6 +244,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-main" class="md-nav__link">
+    -main
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -314,6 +321,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#-main" class="md-nav__link">
+    -main
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -352,21 +366,18 @@
 <h2 id="cli-opts">cli-opts<a class="headerlink" href="#cli-opts" title="Permanent link">&para;</a></h2>
 <details class="tip" open="open"><summary>(def)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">cli-opts</span>
   <span class="p">[[</span><span class="s">&quot;-d&quot;</span> <span class="s">&quot;--dir DIR&quot;</span> <span class="s">&quot;Directory into which the documentation will be written&quot;</span> <span class="ss">:default</span> <span class="s">&quot;./docs&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-f&quot;</span> <span class="s">&quot;--file FILE&quot;</span> <span class="s">&quot;File into which the documentation will be written&quot;</span> <span class="ss">:default</span> <span class="s">&quot;uberdoc.md&quot;</span><span class="p">]</span>
+   <span class="p">[</span><span class="s">&quot;-f&quot;</span> <span class="s">&quot;--file FILE&quot;</span> <span class="s">&quot;File into which the documentation will be written&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-n&quot;</span> <span class="s">&quot;--name NAME&quot;</span> <span class="s">&quot;Project name - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-v&quot;</span> <span class="s">&quot;--version VERSION&quot;</span> <span class="s">&quot;Project version - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-D&quot;</span> <span class="s">&quot;--desc DESC&quot;</span> <span class="s">&quot;Project description - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-a&quot;</span> <span class="s">&quot;--deps DEPS&quot;</span> <span class="s">&quot;Project dependencies in the form &lt;group1&gt;:&lt;artifact1&gt;:&lt;version1&gt;;&lt;group2&gt;...</span>
-<span class="s">                                       If not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-c&quot;</span> <span class="s">&quot;--css CSS&quot;</span> <span class="s">&quot;Additional css resources &lt;resource1&gt;;&lt;resource2&gt;;...</span>
-<span class="s">                                       If not given will be taken from project.clj.&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-j&quot;</span> <span class="s">&quot;--js JS&quot;</span> <span class="s">&quot;Additional javascript resources &lt;resource1&gt;;&lt;resource2&gt;;...</span>
-<span class="s">                                       If not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-m&quot;</span> <span class="s">&quot;--multi&quot;</span> <span class="s">&quot;Generate each namespace documentation as a separate file&quot;</span> <span class="p">]</span>
+<span class="s">                                 If not given will be taken from project.clj&quot;</span><span class="p">]</span>
+   <span class="p">[</span><span class="s">&quot;-m&quot;</span> <span class="s">&quot;--multi&quot;</span> <span class="s">&quot;Generate each namespace documentation as a separate file&quot;</span>  <span class="ss">:default</span> <span class="nv">true</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-l&quot;</span> <span class="s">&quot;--leiningen&quot;</span> <span class="s">&quot;Generate the documentation for a Leiningen project file.&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-e&quot;</span> <span class="s">&quot;--exclude EXCLUDE&quot;</span>
     <span class="s">&quot;Exclude source file(s) from the document generation process &lt;file1&gt;;&lt;file2&gt;...</span>
-<span class="s">                                       If not given will be taken from project.clj&quot;</span><span class="p">]])</span>
+<span class="s">                                 If not given will be taken from project.clj&quot;</span><span class="p">]</span>
+   <span class="p">[</span><span class="s">&quot;-h&quot;</span> <span class="s">&quot;--help&quot;</span> <span class="s">&quot;Show this help&quot;</span><span class="p">]])</span>
 </code></pre></div>
 
 </details>
@@ -384,15 +395,13 @@
   <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">user-parsed-options</span> <span class="p">(</span><span class="nf">parse-opts</span> <span class="nv">args</span> <span class="nv">cli-opts</span><span class="p">)</span>
         <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">dir</span> <span class="nv">file</span> <span class="nb">name </span><span class="nv">version</span> <span class="nv">desc</span> <span class="nv">deps</span> <span class="nv">multi</span>
-                <span class="nv">leiningen</span> <span class="nv">exclude</span> <span class="nv">arguments</span><span class="p">]}</span> <span class="p">(</span><span class="ss">:options</span> <span class="nv">user-parsed-options</span><span class="p">)</span>
+                <span class="nv">leiningen</span> <span class="nv">exclude</span> <span class="nv">arguments</span> <span class="nv">help</span><span class="p">]}</span> <span class="p">(</span><span class="ss">:options</span> <span class="nv">user-parsed-options</span><span class="p">)</span>
         <span class="nv">files</span> <span class="nv">arguments</span>
         <span class="nv">sources</span> <span class="p">(</span><span class="nb">distinct </span><span class="p">(</span><span class="nf">mc/format-sources</span> <span class="p">(</span><span class="nb">seq </span><span class="nv">files</span><span class="p">)))</span>
         <span class="nv">sources</span> <span class="p">(</span><span class="k">if </span><span class="nv">leiningen</span> <span class="p">(</span><span class="nb">cons </span><span class="nv">leiningen</span> <span class="nv">sources</span><span class="p">)</span> <span class="nv">sources</span><span class="p">)]</span>
-    <span class="p">(</span><span class="nb">println </span><span class="nv">user-parsed-options</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">if-not </span><span class="nv">sources</span>
-      <span class="p">(</span><span class="nf">do</span>
-        <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Wrong number of arguments passed to Marginalia.&quot;</span><span class="p">)</span>
-        <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:summary</span> <span class="nv">user-parsed-options</span><span class="p">)))</span>
+    <span class="p">(</span><span class="nb">when </span><span class="nv">help</span>
+      <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:summary</span> <span class="nv">user-parsed-options</span><span class="p">)))</span>
+    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">and </span><span class="nv">sources</span> <span class="p">(</span><span class="nb">not </span><span class="nv">help</span><span class="p">))</span>
       <span class="p">(</span><span class="nb">binding </span><span class="p">[</span><span class="nv">*docs*</span> <span class="nv">dir</span><span class="p">]</span>
         <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">project-clj</span> <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">.exists</span> <span class="p">(</span><span class="nf">io/file</span> <span class="s">&quot;project.clj&quot;</span><span class="p">))</span>
                             <span class="p">(</span><span class="nf">mc/parse-project-file</span><span class="p">))</span>
@@ -421,7 +430,16 @@
             <span class="p">(</span><span class="nf">marginalia-md.markdown/multidoc!</span> <span class="nv">*docs*</span> <span class="nv">sources</span> <span class="nv">opts</span><span class="p">)</span>
             <span class="p">(</span><span class="nf">marginalia-md.markdown/uberdoc!</span>  <span class="p">(</span><span class="nb">str </span><span class="nv">*docs*</span> <span class="s">&quot;/&quot;</span> <span class="nv">file</span><span class="p">)</span> <span class="nv">sources</span> <span class="nv">opts</span><span class="p">))</span>
           <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Done generating your documentation in&quot;</span> <span class="nv">*docs*</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">println </span><span class="s">&quot;&quot;</span><span class="p">))))))</span>
+          <span class="p">(</span><span class="nb">println </span><span class="s">&quot;&quot;</span><span class="p">)))</span>
+      <span class="p">(</span><span class="nb">when-not </span><span class="nv">help</span>
+        <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Wrong number of arguments passed to Marginalia.&quot;</span><span class="p">)</span>
+        <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:summary</span> <span class="nv">user-parsed-options</span><span class="p">))))))</span>
+</code></pre></div>
+
+</details>
+<h2 id="-main">-main<a class="headerlink" href="#-main" title="Permanent link">&para;</a></h2>
+<details class="tip" open="open"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">-main</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">apply </span><span class="nv">run-marginalia-md</span> <span class="nv">args</span><span class="p">))</span>
 </code></pre></div>
 
 </details>

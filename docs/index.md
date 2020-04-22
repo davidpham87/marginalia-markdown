@@ -13,5 +13,11 @@ pip3 install mkdocs-material
 find src -type "f" -name "*.clj*" | xargs clj -m marginalia-md.core
 
 mkdocs serve # dev
-mkdocs build # releas
+mkdocs build # release
 ```
+
+# License
+
+Copyright (C) 2020 David Pham
+
+Distributed under the Eclipse Public License, the same as Clojure.
