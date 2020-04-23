@@ -42,6 +42,7 @@
         files arguments
         sources (distinct (mc/format-sources (seq files)))
         sources (if leiningen (cons leiningen sources) sources)]
+
     (when help
       (println (:summary user-parsed-options)))
     (if (and sources (not help))
@@ -69,7 +70,6 @@
             (println "  " s))
           (println)
           (mc/ensure-directory! *docs*)
-
           (if multi
             (marginalia-md.markdown/multidoc! *docs* sources opts)
             (marginalia-md.markdown/uberdoc!  (str *docs* "/" file) sources opts))

@@ -4,7 +4,9 @@ Simple markdown conversion with some cool features, such as math rendering
   $$ e^{i\pi} = -1 $$
   
 
-???+ tip "(ns)"
+
+
+??? tip "(ns)"
     ```clojure
     (ns marginalia-md.core
       "Simple markdown conversion with some cool features, such as math rendering
@@ -15,17 +17,19 @@ Simple markdown conversion with some cool features, such as math rendering
                 [marginalia.core :as mc]
                 [marginalia-md.markdown]))
     ```
-
 ## *docs*
 
-???+ tip "(def)"
+
+
+??? tip "(def)"
     ```clojure
     (def ^{:dynamic true} *docs* "./docs")
     ```
-
 ## cli-opts
 
-???+ tip "(def)"
+
+
+??? tip "(def)"
     ```clojure
     (def cli-opts
       [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./docs"]
@@ -42,7 +46,6 @@ Simple markdown conversion with some cool features, such as math rendering
                                      If not given will be taken from project.clj"]
        ["-h" "--help" "Show this help"]])
     ```
-
 ## run-marginalia-md
 
 Default generation: given a collection of filepaths in a project, find the .clj
@@ -55,7 +58,11 @@ Default generation: given a collection of filepaths in a project, find the .clj
 
    If no source files are found, complain with a usage message.
 
-???+ tip "(defn)"
+```clojure
+(run-marginalia-md & args)
+```
+
+??? tip "(defn)"
     ```clojure
     (defn run-marginalia-md
       [& args]
@@ -101,12 +108,14 @@ Default generation: given a collection of filepaths in a project, find the .clj
             (println "Wrong number of arguments passed to Marginalia.")
             (println (:summary user-parsed-options))))))
     ```
-
 ## -main
 
-???+ tip "(defn)"
+```clojure
+(-main & args)
+```
+
+??? tip "(defn)"
     ```clojure
     (defn -main [& args]
       (apply run-marginalia-md args))
     ```
-
