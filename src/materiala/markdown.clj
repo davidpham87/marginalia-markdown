@@ -17,7 +17,7 @@
   (let [indent-space (str/join "" (repeat indent-level " "))]
     (str/join "\n" (map #(str indent-space %) (str/split s #"\n")))))
 
-(defn- code-block
+(defn code-block
   "Create code block from given string `s`"
   ([s] (code-block s 4))
   ([s indent-level]
@@ -85,7 +85,7 @@
 ;; This is a comment for testing comments in forms
 ;; => (+ 2 2)
 
-(defn- function-forms
+(defn function-forms
   "Retrived function calling forms.
 
   Inspired by clojure.core/fn and clojure.core/multimethod definition. Returns
@@ -137,20 +137,3 @@
 (defn uberdoc! [docs files options]
   (doseq [filename files]
     (save-md filename (assoc options :append true :target docs))))
-
-(comment
-  (function-forms 'hello '([x y] 3) '([x] 3))
-  (raw->forms '(defn hello ([x y] 3) ([x] 3)))
-
-  (raw->forms "(defn hello [x] 3)")
-  '{:forms (defn hello [x] 3), :verb defn, :var hello, :valid-call [(hello x)], :method-value nil}
-
-  (raw->forms "(defn hello ([x] 3) ([x y] 3))")
-  '{:forms (defn hello ([x] 3) ([x y] 3)), :verb defn, :var hello, :valid-call [(hello x) (hello x y)], :method-value nil}
-
-  (raw->forms "(defmethod hello 3 [{:keys [a b]}] 3)")
-  '{:forms (defmethod hello 3 [{:keys [a b]}] 3), :verb defmethod, :var hello, :valid-call [(hello {:keys [a b]})], :method-value 3}
-  (raw->forms "(def hello 3)")
-  '{:forms (def hello 3), :verb def, :var hello, :valid-call nil, :method-value nil}
-
-  )

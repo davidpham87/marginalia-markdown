@@ -67,6 +67,21 @@ plugins:
   - awesome-pages
 ```
 
+## Development
+
+Run a repl (add your cider deps as well)
+
+``` bash
+clojure -Adev
+```
+
+Run the test (todo: create some specs and generate with `test.check`)
+
+``` bash
+clojure -Atest
+```
+
+
 ## License
 
 Copyright (C) 2020 David Pham
