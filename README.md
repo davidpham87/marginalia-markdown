@@ -1,1 +1,1 @@
-/home/david/Documents/materiala/doc/index.md
+doc/index.md
