@@ -366,6 +366,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#function-forms" class="md-nav__link">
+    function-forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raw-forms" class="md-nav__link">
     raw-&gt;forms
   </a>
@@ -531,6 +538,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function-forms" class="md-nav__link">
+    function-forms
+  </a>
   
 </li>
       
@@ -739,14 +753,14 @@
 
 <details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:comment</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">str/starts-with?</span> <span class="nv">raw</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">)</span>
-    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Result:&quot;</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">))</span>
+    <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Result:&quot;</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">str </span><span class="nv">raw</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
-<p>This is a comment</p>
-<p>Result:    <code>clojure
-    =&gt; (+ 2 2)</code>## function-forms</p>
+<p>This is a comment for testing comments in forms
+=&gt; (+ 2 2)</p>
+<h2 id="function-forms">function-forms<a class="headerlink" href="#function-forms" title="Permanent link">&para;</a></h2>
 <p>Retrived function calling forms.</p>
 <p>Inspired by clojure.core/fn and clojure.core/multimethod definition. Returns
   The valid function calls are returned. Expects valid code without docstrings.</p>
