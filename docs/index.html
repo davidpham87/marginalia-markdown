@@ -231,6 +231,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
     Status
   </a>
@@ -525,6 +532,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#status" class="md-nav__link">
     Status
   </a>
@@ -666,27 +680,37 @@ with auto-documentation/literal programming was org-file, marginalia and codox.<
 
 mkdir doc <span class="c1"># save the output here</span>
 <span class="c1"># parse your src folder and generate the files into ./doc</span>
-clojure -Sdeps <span class="s1">&#39;{:deps {materiala {:git/url &quot;https://github.com/davidpham87/materiala/&quot; :sha &quot;d8fb049709819af52af0f0bfe7423dc8b4f94c7d&quot;}}}&#39;</span> -m materiala.core src
+clojure -Sdeps <span class="s1">&#39;{:deps {materiala {:git/url &quot;https://github.com/davidpham87/materiala/&quot; :sha &quot;b4f85c96b1bf9b96b47714e751b6bff6196533bb&quot;}}}&#39;</span> -m materiala.core src
 
 mkdocs build <span class="c1"># release, use `mkdocs serve` for dev</span>
 <span class="nb">cd</span> doc <span class="o">&amp;&amp;</span> python3 -m http.server
 firefox localhost:8000 <span class="c1"># or your most favorite browser (I use google-chrome)</span>
 </code></pre></div>
 
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Add the following dependency to your <code>deps.edn</code></p>
+<div class="highlight"><pre><span></span><code><span class="nv">materiala</span> <span class="p">{</span><span class="ss">:git/url</span> <span class="s">&quot;https://github.com/davidpham87/materiala/&quot;</span>
+           <span class="ss">:sha</span> <span class="s">&quot;b4f85c96b1bf9b96b47714e751b6bff6196533bb&quot;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>Change for the latest <em>sha</em> code, if required. Note the <em>group-id</em> and
+<em>artifact-id</em> of the package might change once I get enough money to buy a
+domain.</p>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 <p>Status: <strong>alpha</strong>, although I will follow
-<a href="spec-ulation">https://www.youtube.com/watch?v=oyLBGkS5ICk</a> to make my best to
-avoid breaking changes. The biggest issue is the library leverages on
-marginalia's parser.</p>
+<a href="https://www.youtube.com/watch?v=oyLBGkS5ICk">spec-ulation</a> to make my best to
+avoid breaking changes. I want to be a nice person, so I will do my best to not break
+your code. The biggest issue is the library leverages on marginalia's parser.</p>
 <h2 id="technical-solution">Technical Solution<a class="headerlink" href="#technical-solution" title="Permanent link">&para;</a></h2>
 <p>Marginalia API was <em>easier</em> to leverage (and marginalia had a nice website),
 although codox (because neanderthal and the uncomplicate ecosystem) was
 considered for usage and extension by coding a specific writer.</p>
 <h2 id="is-it-a-good-idea">Is it a good idea?<a class="headerlink" href="#is-it-a-good-idea" title="Permanent link">&para;</a></h2>
 <p>Well, smashing strings together and having a DSL goes definitively goes against
-philosophy. But from my small practical point of view, I just wanted to have
-some user friendly searchable docs for my coworkers/friends. For big open
-source libraries published on Clojars, I would still look at
+Clojure's philosophy and main lessons. But from this particular problem, I just
+wanted to have some user friendly searchable docs for my coworkers/friends and
+thanks to Lisp homoiconicity and Clojure simplicity, parsing is not <em>too</em>
+hard. For big open source libraries published on Clojars, I would still look at
 <a href="https://cljdoc.org/">cljdoc</a>.</p>
 <h2 id="extension">Extension<a class="headerlink" href="#extension" title="Permanent link">&para;</a></h2>
 <p>See <a href="extension">here</a> for an example of extension.</p>

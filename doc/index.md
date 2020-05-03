@@ -24,7 +24,7 @@ pip3 install mkdocs-material mkdocs-awesome-pages-plugin
 
 mkdir doc # save the output here
 # parse your src folder and generate the files into ./doc
-clojure -Sdeps '{:deps {materiala {:git/url "https://github.com/davidpham87/materiala/" :sha "d8fb049709819af52af0f0bfe7423dc8b4f94c7d"}}}' -m materiala.core src
+clojure -Sdeps '{:deps {materiala {:git/url "https://github.com/davidpham87/materiala/" :sha "b4f85c96b1bf9b96b47714e751b6bff6196533bb"}}}' -m materiala.core src
 
 mkdocs build # release, use `mkdocs serve` for dev
 cd doc && python3 -m http.server
