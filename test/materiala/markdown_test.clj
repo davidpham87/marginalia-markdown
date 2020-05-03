@@ -17,7 +17,8 @@
 
 
 (deftest function-forms
-  (are [calling-forms function-symbol fn-tail] (= calling-forms (apply sut/function-forms function-symbol fn-tail))
+  (are [calling-forms function-symbol fn-tail]
+      (= calling-forms (apply sut/function-forms function-symbol fn-tail))
     '[(f x y) (f x)] 'f '[([x y] 3) ([x] 3)]
     '[(f x) (f x y)] 'f '[([x] 3) ([x y] 3)]
     '[(f x) (f x & args)] 'f '[([x] 3) ([x & args] 3)]))

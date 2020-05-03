@@ -4,13 +4,14 @@
   "
   (:require [clojure.java.io :as io]
             [clojure.tools.cli :refer (parse-opts)]
+            [clojure.string :as str]
             [marginalia.core :as mc]
             [materiala.markdown]))
 
-(def ^{:dynamic true} *docs* "./docs")
+(def ^{:dynamic true} *docs* "./doc")
 
 (def cli-opts
-  [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./docs"]
+  [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./doc"]
    ["-f" "--file FILE" "File into which the documentation will be written"]
    ["-n" "--name NAME" "Project name - if not given will be taken from project.clj"]
    ["-v" "--version VERSION" "Project version - if not given will be taken from project.clj"]
@@ -34,19 +35,17 @@
      using the found source files and a project file expected to be in its default location.
 
    If no source files are found, complain with a usage message."
-
   [& args]
   (let [user-parsed-options (parse-opts args cli-opts)
         {:keys [dir file name version desc deps multi
-                leiningen exclude arguments help]} (:options user-parsed-options)
-        files arguments
+                leiningen exclude help]} (:options user-parsed-options)
+        files (:arguments user-parsed-options)
         sources (distinct (mc/format-sources (seq files)))
         sources (if leiningen (cons leiningen sources) sources)]
-
     (when help
       (println (:summary user-parsed-options)))
     (if (and sources (not help))
-      (binding [*docs* dir]
+      (binding [*docs* (str/trim dir)]
         (let [project-clj (when (.exists (io/file "project.clj"))
                             (mc/parse-project-file))
               choose #(or %1 %2)
