@@ -139,6 +139,9 @@ plugins:
   - awesome-pages # automatic navigation
 ```
 
+See [mkdocs-material](https://squidfunk.github.io/mkdocs-material/) and
+[mkdocs](https://www.mkdocs.org/) for more detail.
+
 ## Examples
 - [Materiala](https://davidpham87.github.io/materiala/), obviously.
 
