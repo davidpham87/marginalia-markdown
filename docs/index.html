@@ -678,11 +678,21 @@ break your code. The biggest issue is the library leverages on marginalia's
 parser.</p>
 <h2 id="technical-solution">Technical Solution<a class="headerlink" href="#technical-solution" title="Permanent link">&para;</a></h2>
 <p>Marginalia API was <em>easier</em> to leverage (and marginalia had a nice website), so
-the library is build on its parser.</p>
+the library is build on its parser. Our writer acts in two steps:</p>
+<ol>
+<li>For code output from marginalia, the available information is extended (such
+   as valid call forms from function).</li>
+<li>Render the data into markdown consumed by mkdocs.</li>
+</ol>
 <p>As alternative, codox (on which neanderthal and the uncomplicate ecosystem
 built their documentation) was also considered for usage and extension by
 coding a specific writer. However, most of the function codox writer are
 private and I did not want to depend on private api.</p>
+<p>Another alternative would have been to study how mkdocs and its extensions
+converts the markdown into <code>html</code> and targets that output directly to keep the
+data centric view of Clojure. The drawback of this solution is time, and we
+totally loss the leverage on mkdocs. Moreover, it is doubtful that the user
+will require to parse the markdown output again.</p>
 <h2 id="is-it-a-good-idea">Is it a good idea?<a class="headerlink" href="#is-it-a-good-idea" title="Permanent link">&para;</a></h2>
 <p>Well... Smashing strings together and having a DSL for representing data
 definitively goes against Clojure's philosophy and main lessons.</p>

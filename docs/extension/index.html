@@ -443,25 +443,41 @@
                 <h1 id="extension">Extension<a class="headerlink" href="#extension" title="Permanent link">&para;</a></h1>
 <p>The idea of the rendering is to create the markdown string from the raw forms
 and dispatching on the verb of the form (after keywordization [is a real name?])</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:defmethod</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">indent</span>
+  <span class="s">&quot;Indent string portion&quot;</span>
+  <span class="p">[</span><span class="nv">s</span> <span class="nv">indent-level</span><span class="p">]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">indent-space</span> <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;&quot;</span> <span class="p">(</span><span class="nb">repeat </span><span class="nv">indent-level</span> <span class="s">&quot; &quot;</span><span class="p">))]</span>
+    <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">str </span><span class="nv">indent-space</span> <span class="nv">%</span><span class="p">)</span> <span class="p">(</span><span class="nf">str/split</span> <span class="nv">s</span> <span class="o">#</span><span class="s">&quot;\n&quot;</span><span class="p">)))))</span>
+
+<span class="p">(</span><span class="kd">defn </span><span class="nv">code-block</span>
+  <span class="s">&quot;Create code block from given string `s`&quot;</span>
+  <span class="p">([</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;```clojure\n&quot;</span> <span class="nv">s</span> <span class="s">&quot;\n&quot;</span> <span class="s">&quot;```\n\n&quot;</span><span class="p">)))</span>
+
+<span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:defmethod</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span> <span class="nv">method-value</span> <span class="nv">verb</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="mi">3</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="s">&quot; &quot;</span> <span class="nv">method-value</span> <span class="s">&quot;\n&quot;</span>
        <span class="s">&quot;\n&quot;</span>
        <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
-       <span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-valid-call</span><span class="p">)</span>
+       <span class="p">(</span><span class="nb">when </span><span class="nv">valid-call</span>
+         <span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map str </span><span class="nv">valid-call</span><span class="p">))</span>
+             <span class="p">(</span><span class="nf">str/replace</span> <span class="o">#</span><span class="s">&quot;,&quot;</span> <span class="s">&quot;&quot;</span><span class="p">)</span>
+             <span class="nv">code-block</span><span class="p">))</span>
        <span class="s">&quot;\n\n&quot;</span>
        <span class="s">&quot;??? info \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
-       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">4</span><span class="p">)</span>
+       <span class="p">(</span><span class="nf">indent</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span> <span class="mi">4</span><span class="p">)</span>
        <span class="s">&quot;\n&quot;</span><span class="p">))</span>
 
 <span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:comment</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;## Comment \n\n&quot;</span>
-       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">0</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
+  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;## Rich Comment \n\n&quot;</span>
+       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
+
+<span class="c1">;; yes, string smashing is fun as long as we don&#39;t have to parse it xD</span>
+<span class="c1">;; materiala.markdown provides helpers to reduce the code smashing.</span>
 </code></pre></div>
 
-<p>The common top level pattern is the <code>(def-verb-symbol var-name [vector-of-args]
-&amp; body)</code>, which is default case render this case. However, the number of top
+<p>The common top level pattern in code file is the <code>(def-verb-symbol var-name &amp;
+body)</code>, which is default case render this case. However, the number of top
 level forms is infinite thanks the power of macros (e.g. re-frame's
 <code>reg-event-fx</code>). For these case, you can:</p>
 <ol>
