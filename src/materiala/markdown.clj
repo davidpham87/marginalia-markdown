@@ -42,6 +42,19 @@
   ([s indent-level]
    (indent (str "```clojure\n" s "\n" "```\n\n") indent-level)))
 
+(defn admonition
+  [{:keys [content type optional open title]
+    :or {optional false open false}}]
+  (str (cond
+         (not optional) "!!! "
+         (and optional open) "???+"
+         :else "??? ")
+       type
+       " "
+       (when title (str " \"" title "\""))
+       "\n\n"
+       (indent content 4)))
+
 (defn code-inline [s] (str "`" s "`"))
 
 (defn render-valid-call [valid-call]
@@ -60,9 +73,9 @@
        (when docstring (str docstring "\n\n"))
        (render-valid-call valid-call)
        "\n\n"
-       "??? tip \"(" verb ")\"\n"
-       (code-block raw)
-       "\n"))
+       (admonition {:content (code-block raw 0) :type "tip"
+                    :title (str "(" verb ")") :optional true})
+       "\n\n"))
 
 (defmulti render-code-form (fn [m] (-> m :verb keyword)))
 
@@ -81,8 +94,9 @@
        (when docstring (str docstring "\n\n"))
        (render-valid-call valid-call)
        "\n\n"
-       "??? info \"(" verb ")\"\n"
-       (code-block raw 4)
+       (admonition {:content (code-block raw 0) :type "info"
+                    :title (str "(" verb ")")
+                    :optional true})
        "\n"))
 
 (defmethod render-code-form :comment
@@ -128,12 +142,40 @@
   {:valid-call (apply function-forms (second forms) (drop 3 forms))
    :method-value (nth forms 2)})
 
-(defn ^{:meta-data :true} raw->forms [raw]
-  (binding [clojure.tools.reader/*read-eval* false]
-    (let [forms (clojure.tools.reader/read-string raw)
-          verb (first forms) name (second forms)]
-      (merge {:forms forms :verb verb :var name}
-             (extended-raw->forms forms)))))
+(defn- evaluate-form*
+  "Brute force elementary parser on raw string to provide when for non valid
+  forms.
+
+  We use marginalia parser and sometimes the parse function does not return as
+  valid raw form. In this case, an elementary custom algorithm is provided to
+  still provide the information to the user."
+  [raw {:keys [docstring] :as m}]
+  (let [docstring
+        (str (admonition
+              {:content (str "The displayed code is not valid. "
+                             "This is due to Marginalia's parsing code.")
+               :type "danger" :title "Parsing error" :optional false})
+             "\n\n"
+             docstring)
+        forms (->> (str/split (subs raw 1 (dec (dec (count raw)))) #" " 3)
+                   (map str/trim))]
+    (assoc m :docstring docstring :forms forms)))
+
+(defn evaluate-form [raw m]
+  (try
+    (binding [clojure.tools.reader/*read-eval* false]
+      {:forms (clojure.tools.reader/read-string raw)})
+    (catch Exception _
+      (println "\nParser mistake from marginalia, attempt to rescue with brute force.")
+      (println (str raw "\n"))
+
+      (evaluate-form* raw m))))
+
+(defn ^{:meta-data :true} raw->forms [{:keys [raw] :as m}]
+  (let [{:keys [forms] :as m} (evaluate-form raw m)
+        verb (first forms)
+        name (second forms)]
+    (merge m {:forms forms :verb verb :var name} (extended-raw->forms forms))))
 
 ;; comment here
 
@@ -144,9 +186,9 @@
     (clojure.java.io/make-parents target)
     (when-not (:append options)
       (spit target ""))
-    (doseq [{:keys [raw type] :as all} (p/parse-file filename)]
+    (doseq [{:keys [type] :as all} (p/parse-file filename)]
       (let [all (cond-> all
-                  (and (= type :code) (:raw all)) (merge (raw->forms raw))
+                  (and (= type :code) (:raw all)) (merge (raw->forms all))
                   :always identity)]
         (spit target (render-form all) :append true)))))
 
@@ -183,4 +225,25 @@
   (raw->forms "(defmethod hello 3 [{:keys [a b]}] 3)")
 
   (function-forms '(def hello {:pre identity} [m] 3))
+
+  (require '[clojure.string :as str])
+
+  (let [raw (str '(defn titles []
+                (let [xs (execute-query! ["select * from titles"])]
+                  (into [] (comp (filter #(str/ends-with? (:file %) ".org\""))
+                                 (map parse-lisp-record)
+                                 (map #(update % :file expand-home))) xs))))]
+    (p/parse raw)
+    #_(evaluate-form raw))
+
+
+  (defn evaluate-form [raw]
+    (try
+      (clojure.tools.reader/read-string raw)
+      (catch Exception e
+        (println "Failed to read:" raw)
+        (println "Exception was:")
+        (println (select-keys (bean e) [:data :message])))))
+
+
   )

@@ -48,3 +48,5 @@
 (fn [m] 3))"
     '{:forms (reg-sub :hello (fn [m] 3)), :verb reg-sub, :var :hello}
     ))
+
+;; add test with malformed code.
