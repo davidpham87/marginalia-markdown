@@ -1,6 +1,3 @@
-# Bug in multiple src file
+# Extension
 
-
-``` bash
-clojure -m material.core src test
-```
+How can we extend `render-code-form`?

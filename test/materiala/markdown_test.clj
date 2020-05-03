@@ -27,16 +27,24 @@
   (are [code-string result] (= result (sut/raw->forms code-string))
 
     "(def hello 3)"
-    '{:forms (def hello 3) :verb def :var hello :valid-call nil :method-value nil}
+    '{:forms (def hello 3) :verb def :var hello}
 
     "(defn hello [x] 3)"
-    '{:forms (defn hello [x] 3) :verb defn :var hello :valid-call [(hello x)]
-      :method-value nil}
+    '{:forms (defn hello [x] 3) :verb defn :var hello :valid-call [(hello x)]}
 
     "(defn hello ([x] 3) ([x y] 3))"
     '{:forms (defn hello ([x] 3) ([x y] 3)) :verb defn :var hello
-      :valid-call [(hello x) (hello x y)] :method-value nil}
+      :valid-call [(hello x) (hello x y)]}
 
     "(defmethod hello 3 [{:keys [a b]}] 3)"
     '{:forms (defmethod hello 3 [{:keys [a b]}] 3) :verb defmethod :var hello
-      :valid-call [(hello {:keys [a b]})] :method-value 3}))
+      :valid-call [(hello {:keys [a b]})] :method-value 3}
+
+    "(defn hello {:pre (constantly true)} ([m] 3))"
+    '{:forms (defn hello {:pre (constantly true)} ([m] 3)), :verb defn, :var hello, :valid-call [(hello m)]}
+
+    "(reg-sub
+:hello
+(fn [m] 3))"
+    '{:forms (reg-sub :hello (fn [m] 3)), :verb reg-sub, :var :hello}
+    ))

@@ -1,12 +1,12 @@
 (ns materiala.core
   "Simple markdown conversion with some cool features, such as math rendering
-  $$ e^{i\\pi} = -1 $$
-  "
+  $$ e^{i\\pi} = -1 $$"
   (:require [clojure.java.io :as io]
             [clojure.tools.cli :refer (parse-opts)]
             [clojure.string :as str]
             [marginalia.core :as mc]
-            [materiala.markdown]))
+            [materiala.markdown]
+            [materiala.extensions.core]))
 
 (def ^{:dynamic true} *docs* "./doc")
 

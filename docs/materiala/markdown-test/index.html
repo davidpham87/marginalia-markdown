@@ -15,7 +15,7 @@
     
     
       
-        <title>materiala.core - Materiala</title>
+        <title>materiala.markdown-test - Materiala</title>
       
     
     
@@ -56,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#materialacore" class="md-skip">
+        <a href="#materialamarkdown-test" class="md-skip">
           Skip to content
         </a>
       
@@ -83,7 +83,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              materiala.core
+              materiala.markdown-test
             
           </span>
         </div>
@@ -231,6 +231,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../core/" title="materiala.core" class="md-nav__link">
+      materiala.core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -242,14 +254,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        materiala.core
+        materiala.markdown-test
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="./" title="materiala.core" class="md-nav__link md-nav__link--active">
-      materiala.core
+    <a href="./" title="materiala.markdown-test" class="md-nav__link md-nav__link--active">
+      materiala.markdown-test
     </a>
     
       
@@ -268,29 +280,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docs" class="md-nav__link">
-    *docs*
+  <a href="#intent" class="md-nav__link">
+    intent
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cli-opts" class="md-nav__link">
-    cli-opts
+  <a href="#code-block" class="md-nav__link">
+    code-block
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-materiala" class="md-nav__link">
-    run-materiala
+  <a href="#function-forms" class="md-nav__link">
+    function-forms
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-main" class="md-nav__link">
-    -main
+  <a href="#raw-forms" class="md-nav__link">
+    raw-&gt;forms
   </a>
   
 </li>
@@ -299,18 +311,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../markdown-test/" title="materiala.markdown-test" class="md-nav__link">
-      materiala.markdown-test
-    </a>
   </li>
 
         
@@ -423,29 +423,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#docs" class="md-nav__link">
-    *docs*
+  <a href="#intent" class="md-nav__link">
+    intent
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cli-opts" class="md-nav__link">
-    cli-opts
+  <a href="#code-block" class="md-nav__link">
+    code-block
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-materiala" class="md-nav__link">
-    run-materiala
+  <a href="#function-forms" class="md-nav__link">
+    function-forms
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-main" class="md-nav__link">
-    -main
+  <a href="#raw-forms" class="md-nav__link">
+    raw-&gt;forms
   </a>
   
 </li>
@@ -462,7 +462,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/davidpham87/materiala/edit/master/doc/materiala/core.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/davidpham87/materiala/edit/master/doc/materiala/markdown-test.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -470,109 +470,60 @@
                   
                 
                 
-                <h1 id="materialacore">materiala.core<a class="headerlink" href="#materialacore" title="Permanent link">&para;</a></h1>
-<p>Simple markdown conversion with some cool features, such as math rendering
-  $$ e^{i\pi} = -1 $$</p>
-<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.core</span>
-  <span class="s">&quot;Simple markdown conversion with some cool features, such as math rendering</span>
-<span class="s">  $$ e^{i\\pi} = -1 $$&quot;</span>
-  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.java.io</span> <span class="ss">:as</span> <span class="nv">io</span><span class="p">]</span>
-            <span class="p">[</span><span class="nv">clojure.tools.cli</span> <span class="ss">:refer</span> <span class="p">(</span><span class="nf">parse-opts</span><span class="p">)]</span>
-            <span class="p">[</span><span class="nv">clojure.string</span> <span class="ss">:as</span> <span class="nv">str</span><span class="p">]</span>
-            <span class="p">[</span><span class="nv">marginalia.core</span> <span class="ss">:as</span> <span class="nv">mc</span><span class="p">]</span>
-            <span class="p">[</span><span class="nv">materiala.markdown</span><span class="p">]</span>
-            <span class="p">[</span><span class="nv">materiala.extensions.core</span><span class="p">]))</span>
+                <h1 id="materialamarkdown-test">materiala.markdown-test<a class="headerlink" href="#materialamarkdown-test" title="Permanent link">&para;</a></h1>
+<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.markdown-test</span>
+  <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">materiala.markdown</span> <span class="ss">:as</span> <span class="nv">sut</span><span class="p">]</span>
+            <span class="p">[</span><span class="nv">clojure.test</span> <span class="ss">:as</span> <span class="nv">t</span> <span class="ss">:refer</span> <span class="p">(</span><span class="nf">deftest</span> <span class="nv">is</span> <span class="nv">are</span><span class="p">)]))</span>
 </code></pre></div>
 
 </details>
-<h2 id="docs"><code>*docs*</code><a class="headerlink" href="#docs" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(def)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="o">^</span><span class="p">{</span><span class="ss">:dynamic</span> <span class="nv">true</span><span class="p">}</span> <span class="nv">*docs*</span> <span class="s">&quot;./doc&quot;</span><span class="p">)</span>
+<h2 id="intent"><code>intent</code><a class="headerlink" href="#intent" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">intent</span>
+  <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">s</span> <span class="nv">level</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">x</span> <span class="p">(</span><span class="nf">sut/indent</span> <span class="nv">s</span> <span class="nv">level</span><span class="p">))</span>
+    <span class="s">&quot;a&quot;</span> <span class="s">&quot;a&quot;</span> <span class="mi">0</span>
+    <span class="s">&quot; a&quot;</span> <span class="s">&quot;a&quot;</span> <span class="mi">1</span>
+    <span class="s">&quot;  a&quot;</span> <span class="s">&quot;a&quot;</span> <span class="mi">2</span>
+    <span class="s">&quot;  a\n  b&quot;</span> <span class="s">&quot;a\nb&quot;</span> <span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
-<h2 id="cli-opts"><code>cli-opts</code><a class="headerlink" href="#cli-opts" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(def)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">cli-opts</span>
-  <span class="p">[[</span><span class="s">&quot;-d&quot;</span> <span class="s">&quot;--dir DIR&quot;</span> <span class="s">&quot;Directory into which the documentation will be written&quot;</span> <span class="ss">:default</span> <span class="s">&quot;./doc&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-f&quot;</span> <span class="s">&quot;--file FILE&quot;</span> <span class="s">&quot;File into which the documentation will be written&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-n&quot;</span> <span class="s">&quot;--name NAME&quot;</span> <span class="s">&quot;Project name - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-v&quot;</span> <span class="s">&quot;--version VERSION&quot;</span> <span class="s">&quot;Project version - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-D&quot;</span> <span class="s">&quot;--desc DESC&quot;</span> <span class="s">&quot;Project description - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-a&quot;</span> <span class="s">&quot;--deps DEPS&quot;</span> <span class="s">&quot;Project dependencies in the form &lt;group1&gt;:&lt;artifact1&gt;:&lt;version1&gt;;&lt;group2&gt;...</span>
-<span class="s">                                 If not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-m&quot;</span> <span class="s">&quot;--multi&quot;</span> <span class="s">&quot;Generate each namespace documentation as a separate file&quot;</span>  <span class="ss">:default</span> <span class="nv">true</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-l&quot;</span> <span class="s">&quot;--leiningen&quot;</span> <span class="s">&quot;Generate the documentation for a Leiningen project file.&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-e&quot;</span> <span class="s">&quot;--exclude EXCLUDE&quot;</span>
-    <span class="s">&quot;Exclude source file(s) from the document generation process &lt;file1&gt;;&lt;file2&gt;...</span>
-<span class="s">                                 If not given will be taken from project.clj&quot;</span><span class="p">]</span>
-   <span class="p">[</span><span class="s">&quot;-h&quot;</span> <span class="s">&quot;--help&quot;</span> <span class="s">&quot;Show this help&quot;</span><span class="p">]])</span>
+<h2 id="code-block"><code>code-block</code><a class="headerlink" href="#code-block" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">code-block</span>
+  <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">s</span> <span class="nv">code</span> <span class="nv">indent</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">s</span> <span class="p">(</span><span class="nf">sut/code-block</span> <span class="nv">code</span> <span class="nv">indent</span><span class="p">))</span>
+    <span class="s">&quot;```clojure\nx\n```&quot;</span> <span class="ss">&#39;x</span> <span class="mi">0</span>
+    <span class="s">&quot;    ```clojure\n    x\n    ```&quot;</span> <span class="ss">&#39;x</span> <span class="mi">4</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
-<h2 id="run-materiala"><code>run-materiala</code><a class="headerlink" href="#run-materiala" title="Permanent link">&para;</a></h2>
-<p>Default generation: given a collection of filepaths in a project, find the .clj
-   files at these paths and, if Clojure source files are found:</p>
-<ol>
-<li>Print out a message to std out letting a user know which files are to be processed;</li>
-<li>Create the docs directory inside the project folder if it doesn't already exist;</li>
-<li>Call the uberdoc! function to generate the output file at its default location,
-     using the found source files and a project file expected to be in its default location.</li>
-</ol>
-<p>If no source files are found, complain with a usage message.</p>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">run-materiala</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">)</span>
-</code></pre></div>
-
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">run-materiala</span>
-  <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
-  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">user-parsed-options</span> <span class="p">(</span><span class="nf">parse-opts</span> <span class="nv">args</span> <span class="nv">cli-opts</span><span class="p">)</span>
-        <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">dir</span> <span class="nv">file</span> <span class="nb">name </span><span class="nv">version</span> <span class="nv">desc</span> <span class="nv">deps</span> <span class="nv">multi</span>
-                <span class="nv">leiningen</span> <span class="nv">exclude</span> <span class="nv">help</span><span class="p">]}</span> <span class="p">(</span><span class="ss">:options</span> <span class="nv">user-parsed-options</span><span class="p">)</span>
-        <span class="nv">files</span> <span class="p">(</span><span class="ss">:arguments</span> <span class="nv">user-parsed-options</span><span class="p">)</span>
-        <span class="nv">sources</span> <span class="p">(</span><span class="nb">distinct </span><span class="p">(</span><span class="nf">mc/format-sources</span> <span class="p">(</span><span class="nb">seq </span><span class="nv">files</span><span class="p">)))</span>
-        <span class="nv">sources</span> <span class="p">(</span><span class="k">if </span><span class="nv">leiningen</span> <span class="p">(</span><span class="nb">cons </span><span class="nv">leiningen</span> <span class="nv">sources</span><span class="p">)</span> <span class="nv">sources</span><span class="p">)]</span>
-    <span class="p">(</span><span class="nb">when </span><span class="nv">help</span>
-      <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:summary</span> <span class="nv">user-parsed-options</span><span class="p">)))</span>
-    <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">and </span><span class="nv">sources</span> <span class="p">(</span><span class="nb">not </span><span class="nv">help</span><span class="p">))</span>
-      <span class="p">(</span><span class="nb">binding </span><span class="p">[</span><span class="nv">*docs*</span> <span class="p">(</span><span class="nf">str/trim</span> <span class="nv">dir</span><span class="p">)]</span>
-        <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">project-clj</span> <span class="p">(</span><span class="nb">when </span><span class="p">(</span><span class="nf">.exists</span> <span class="p">(</span><span class="nf">io/file</span> <span class="s">&quot;project.clj&quot;</span><span class="p">))</span>
-                            <span class="p">(</span><span class="nf">mc/parse-project-file</span><span class="p">))</span>
-              <span class="nv">choose</span> <span class="o">#</span><span class="p">(</span><span class="nb">or </span><span class="nv">%1</span> <span class="nv">%2</span><span class="p">)</span>
-              <span class="nv">marg-opts</span> <span class="p">(</span><span class="nb">merge-with </span><span class="nv">choose</span>
-                                    <span class="p">{</span><span class="ss">:exclude</span> <span class="p">(</span><span class="nb">when </span><span class="nv">exclude</span> <span class="p">(</span><span class="nf">.split</span> <span class="nv">exclude</span> <span class="s">&quot;;&quot;</span><span class="p">))</span>
-                                     <span class="ss">:leiningen</span> <span class="nv">leiningen</span><span class="p">}</span>
-                                    <span class="p">(</span><span class="ss">:marginalia</span> <span class="nv">project-clj</span><span class="p">))</span>
-              <span class="nv">opts</span> <span class="p">(</span><span class="nb">merge-with </span><span class="nv">choose</span>
-                               <span class="p">{</span><span class="ss">:name</span> <span class="nv">name</span>
-                                <span class="ss">:version</span> <span class="nv">version</span>
-                                <span class="ss">:description</span> <span class="nv">desc</span>
-                                <span class="ss">:dependencies</span> <span class="p">(</span><span class="nf">mc/split-deps</span> <span class="nv">deps</span><span class="p">)</span>
-                                <span class="ss">:multi</span> <span class="nv">multi</span>
-                                <span class="ss">:marginalia</span> <span class="nv">marg-opts</span><span class="p">}</span>
-                               <span class="nv">project-clj</span><span class="p">)</span>
-              <span class="nv">sources</span> <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="nv">sources</span>
-                           <span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">mc/source-excluded?</span> <span class="nv">%</span> <span class="nv">opts</span><span class="p">)))</span>
-                           <span class="p">(</span><span class="nb">into </span><span class="p">[]))]</span>
-          <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Generating Marginalia documentation for the following source files:&quot;</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">s</span> <span class="nv">sources</span><span class="p">]</span>
-            <span class="p">(</span><span class="nb">println </span><span class="s">&quot;  &quot;</span> <span class="nv">s</span><span class="p">))</span>
-          <span class="p">(</span><span class="nf">println</span><span class="p">)</span>
-          <span class="p">(</span><span class="nf">mc/ensure-directory!</span> <span class="nv">*docs*</span><span class="p">)</span>
-          <span class="p">(</span><span class="k">if </span><span class="nv">multi</span>
-            <span class="p">(</span><span class="nf">materiala.markdown/multidoc!</span> <span class="nv">*docs*</span> <span class="nv">sources</span> <span class="nv">opts</span><span class="p">)</span>
-            <span class="p">(</span><span class="nf">materiala.markdown/uberdoc!</span>  <span class="p">(</span><span class="nb">str </span><span class="nv">*docs*</span> <span class="s">&quot;/&quot;</span> <span class="nv">file</span><span class="p">)</span> <span class="nv">sources</span> <span class="nv">opts</span><span class="p">))</span>
-          <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Done generating your documentation in&quot;</span> <span class="nv">*docs*</span><span class="p">)</span>
-          <span class="p">(</span><span class="nb">println </span><span class="s">&quot;&quot;</span><span class="p">)))</span>
-      <span class="p">(</span><span class="nb">when-not </span><span class="nv">help</span>
-        <span class="p">(</span><span class="nb">println </span><span class="s">&quot;Wrong number of arguments passed to Marginalia.&quot;</span><span class="p">)</span>
-        <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="ss">:summary</span> <span class="nv">user-parsed-options</span><span class="p">))))))</span>
+<h2 id="function-forms"><code>function-forms</code><a class="headerlink" href="#function-forms" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">function-forms</span>
+  <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">calling-forms</span> <span class="nv">function-symbol</span> <span class="nv">fn-tail</span><span class="p">]</span>
+      <span class="p">(</span><span class="nb">= </span><span class="nv">calling-forms</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">sut/function-forms</span> <span class="nv">function-symbol</span> <span class="nv">fn-tail</span><span class="p">))</span>
+    <span class="o">&#39;</span><span class="p">[(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)]</span> <span class="ss">&#39;f</span> <span class="o">&#39;</span><span class="p">[([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)]</span>
+    <span class="o">&#39;</span><span class="p">[(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)]</span> <span class="ss">&#39;f</span> <span class="o">&#39;</span><span class="p">[([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">)]</span>
+    <span class="o">&#39;</span><span class="p">[(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">)]</span> <span class="ss">&#39;f</span> <span class="o">&#39;</span><span class="p">[([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span> <span class="mi">3</span><span class="p">)]))</span>
 </code></pre></div>
 
 </details>
-<h2 id="-main"><code>-main</code><a class="headerlink" href="#-main" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">-main</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">)</span>
-</code></pre></div>
-
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">-main</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
-  <span class="p">(</span><span class="nb">apply </span><span class="nv">run-materiala</span> <span class="nv">args</span><span class="p">))</span>
+<h2 id="raw-forms"><code>raw-&gt;forms</code><a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">raw-&gt;forms</span>
+  <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">code-string</span> <span class="nv">result</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">result</span> <span class="p">(</span><span class="nf">sut/raw-&gt;forms</span> <span class="nv">code-string</span><span class="p">))</span>
+    <span class="s">&quot;(def hello 3)&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="k">def </span><span class="nv">hello</span> <span class="mi">3</span><span class="p">)</span> <span class="ss">:verb</span> <span class="k">def </span><span class="ss">:var</span> <span class="nv">hello</span><span class="p">}</span>
+    <span class="s">&quot;(defn hello [x] 3)&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="ss">:verb</span> <span class="kd">defn </span><span class="ss">:var</span> <span class="nv">hello</span> <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="nv">x</span><span class="p">)]}</span>
+    <span class="s">&quot;(defn hello ([x] 3) ([x y] 3))&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">))</span> <span class="ss">:verb</span> <span class="kd">defn </span><span class="ss">:var</span> <span class="nv">hello</span>
+      <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">hello</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)]}</span>
+    <span class="s">&quot;(defmethod hello 3 [{:keys [a b]}] 3)&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defmethod </span><span class="nv">hello</span> <span class="mi">3</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]}]</span> <span class="mi">3</span><span class="p">)</span> <span class="ss">:verb</span> <span class="kd">defmethod </span><span class="ss">:var</span> <span class="nv">hello</span>
+      <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]})]</span> <span class="ss">:method-value</span> <span class="mi">3</span><span class="p">}</span>
+    <span class="s">&quot;(defn hello {:pre (constantly true)} ([m] 3))&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">{</span><span class="ss">:pre</span> <span class="p">(</span><span class="nb">constantly </span><span class="nv">true</span><span class="p">)}</span> <span class="p">([</span><span class="nv">m</span><span class="p">]</span> <span class="mi">3</span><span class="p">))</span>, <span class="ss">:verb</span> <span class="nv">defn</span>, <span class="ss">:var</span> <span class="nv">hello</span>, <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="nv">m</span><span class="p">)]}</span>
+    <span class="s">&quot;(reg-sub</span>
+<span class="s">:hello</span>
+<span class="s">(fn [m] 3))&quot;</span>
+    <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="nf">reg-sub</span> <span class="ss">:hello</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="mi">3</span><span class="p">))</span>, <span class="ss">:verb</span> <span class="nv">reg-sub</span>, <span class="ss">:var</span> <span class="ss">:hello</span><span class="p">}))</span>
 </code></pre></div>
 
 </details>
@@ -594,7 +545,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../extension/" title="Extension" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../core/" title="materiala.core" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -603,19 +554,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Extension
+                materiala.core
               </div>
             </div>
           </a>
         
         
-          <a href="../markdown-test/" title="materiala.markdown-test" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../markdown/" title="materiala.markdown" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                materiala.markdown-test
+                materiala.markdown
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

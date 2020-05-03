@@ -21,6 +21,12 @@
     
       <link rel="stylesheet" href="assets/stylesheets/main.c4007cdc.min.css">
       
+        <link rel="stylesheet" href="assets/stylesheets/palette.8435c73a.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
       
     
     
@@ -40,7 +46,9 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -48,7 +56,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#materiala" class="md-skip">
+        <a href="#materiala-mkdocs-material-marginalia" class="md-skip">
           Skip to content
         </a>
       
@@ -61,8 +69,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="." title="Materiala" class="md-header-nav__button md-logo" aria-label="Materiala">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="images/logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -70,8 +77,15 @@
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
       
-        <div class="md-header-nav__ellipsis md-ellipsis">
-          Materiala
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Materiala
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Materiala (mkdocs-material + marginalia)
+            
+          </span>
         </div>
       
     </div>
@@ -141,8 +155,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="." title="Materiala" class="md-nav__button md-logo" aria-label="Materiala">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="images/logo.png" alt="logo">
 
     </a>
     Materiala
@@ -178,14 +191,14 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Materiala
+        Materiala (mkdocs-material + marginalia)
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
         </span>
       </label>
     
-    <a href="." title="Materiala" class="md-nav__link md-nav__link--active">
-      Materiala
+    <a href="." title="Materiala (mkdocs-material + marginalia)" class="md-nav__link md-nav__link--active">
+      Materiala (mkdocs-material + marginalia)
     </a>
     
       
@@ -211,6 +224,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#technical-solution" class="md-nav__link">
     Technical Solution
   </a>
@@ -218,8 +245,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick start
+  <a href="#is-it-a-good-idea" class="md-nav__link">
+    Is it a good idea?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension" class="md-nav__link">
+    Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commande-line-args" class="md-nav__link">
+    Commande line args
+  </a>
+  
+    <nav class="md-nav" aria-label="Commande line args">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitation" class="md-nav__link">
+    Limitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
   </a>
   
 </li>
@@ -232,8 +293,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-up-with-logo" class="md-nav__link">
+    What's up with logo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#development" class="md-nav__link">
     Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
   </a>
   
 </li>
@@ -257,18 +346,30 @@
       
 
 
+  <li class="md-nav__item">
+    <a href="extension/" title="Extension" class="md-nav__link">
+      Extension
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Materiala
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Materiala" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -295,9 +396,87 @@
 
 
   <li class="md-nav__item">
+    <a href="materiala/markdown-test/" title="materiala.markdown-test" class="md-nav__link">
+      materiala.markdown-test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="materiala/markdown/" title="materiala.markdown" class="md-nav__link">
       materiala.markdown
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Extensions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extensions" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="materiala/extensions/core/" title="materiala.extensions.core" class="md-nav__link">
+      materiala.extensions.core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="materiala/extensions/re-frame-test/" title="materiala.extensions.re-frame-test" class="md-nav__link">
+      materiala.extensions.re-frame-test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="materiala/extensions/re-frame/" title="materiala.extensions.re-frame" class="md-nav__link">
+      materiala.extensions.re-frame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -339,6 +518,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    Quick start
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    Status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#technical-solution" class="md-nav__link">
     Technical Solution
   </a>
@@ -346,8 +539,42 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-start" class="md-nav__link">
-    Quick start
+  <a href="#is-it-a-good-idea" class="md-nav__link">
+    Is it a good idea?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension" class="md-nav__link">
+    Extension
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commande-line-args" class="md-nav__link">
+    Commande line args
+  </a>
+  
+    <nav class="md-nav" aria-label="Commande line args">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitation" class="md-nav__link">
+    Limitation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
   </a>
   
 </li>
@@ -360,8 +587,36 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    See also
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-up-with-logo" class="md-nav__link">
+    What's up with logo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#development" class="md-nav__link">
     Development
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#todo" class="md-nav__link">
+    TODO
   </a>
   
 </li>
@@ -385,7 +640,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/davidpham87/materiala/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/davidpham87/materiala/edit/master/doc/index.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -393,10 +648,11 @@
                   
                 
                 
-                <h1 id="materiala">Materiala<a class="headerlink" href="#materiala" title="Permanent link">&para;</a></h1>
-<p>Experience to leverage <a href="https://github.com/gdeer81/marginalia">marginalia</a>
-parser and <a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a> to
-create documentation.</p>
+                <h1 id="materiala-mkdocs-material-marginalia">Materiala (mkdocs-material + marginalia)<a class="headerlink" href="#materiala-mkdocs-material-marginalia" title="Permanent link">&para;</a></h1>
+<p><img alt="logo" src="images/logo-black.png" /> Experience to leverage
+<a href="https://github.com/gdeer81/marginalia">marginalia</a> parser and
+<a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a> to create
+documentation.</p>
 <p>Example: https://davidpham87.github.io/materiala/</p>
 <h2 id="rationale">Rationale<a class="headerlink" href="#rationale" title="Permanent link">&para;</a></h2>
 <p>I <strong>really</strong> liked <a href="https://calva.io">calva.io</a> website for documentation [I
@@ -405,18 +661,59 @@ I wanted to use it for my own documentation. We already have marginalia, codox
 and cljdoc, so this library does not add a lot, but I still wanted to have a
 nice UI for personal project and as a nice project. My only experience before
 with auto-documentation/literal programming was org-file, marginalia and codox.</p>
+<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>pip3 install mkdocs-material mkdocs-awesome-pages-plugin
+
+mkdir doc <span class="c1"># save the output here</span>
+<span class="c1"># parse your src folder and generate the files into ./doc</span>
+clojure -Sdeps <span class="s1">&#39;{:deps {materiala {:git/url &quot;https://github.com/davidpham87/materiala/&quot; :sha &quot;d8fb049709819af52af0f0bfe7423dc8b4f94c7d&quot;}}}&#39;</span> -m materiala.core src
+
+mkdocs build <span class="c1"># release, use `mkdocs serve` for dev</span>
+<span class="nb">cd</span> doc <span class="o">&amp;&amp;</span> python3 -m http.server
+firefox localhost:8000 <span class="c1"># or your most favorite browser (I use google-chrome)</span>
+</code></pre></div>
+
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>Status: <strong>alpha</strong>, although I will follow
+<a href="spec-ulation">https://www.youtube.com/watch?v=oyLBGkS5ICk</a> to make my best to
+avoid breaking changes. The biggest issue is the library leverages on
+marginalia's parser.</p>
 <h2 id="technical-solution">Technical Solution<a class="headerlink" href="#technical-solution" title="Permanent link">&para;</a></h2>
 <p>Marginalia API was <em>easier</em> to leverage (and marginalia had a nice website),
 although codox (because neanderthal and the uncomplicate ecosystem) was
 considered for usage and extension by coding a specific writer.</p>
-<h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>pip3 install mkdocs-material
+<h2 id="is-it-a-good-idea">Is it a good idea?<a class="headerlink" href="#is-it-a-good-idea" title="Permanent link">&para;</a></h2>
+<p>Well, smashing strings together and having a DSL goes definitively goes against
+philosophy. But from my small practical point of view, I just wanted to have
+some user friendly searchable docs for my coworkers/friends. For big open
+source libraries published on Clojars, I would still look at
+<a href="https://cljdoc.org/">cljdoc</a>.</p>
+<h2 id="extension">Extension<a class="headerlink" href="#extension" title="Permanent link">&para;</a></h2>
+<p>See <a href="extension">here</a> for an example of extension.</p>
+<h2 id="commande-line-args">Commande line args<a class="headerlink" href="#commande-line-args" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>clojure -m materiala.core -h
+  -d, --dir DIR          ./doc  Directory into which the documentation will be written
+  -f, --file FILE               File into which the documentation will be written
+  -n, --name NAME               Project name - <span class="k">if</span> not given will be taken from project.clj
+  -v, --version VERSION         Project version - <span class="k">if</span> not given will be taken from project.clj
+  -D, --desc DESC               Project description - <span class="k">if</span> not given will be taken from project.clj
+  -a, --deps DEPS               Project dependencies in the form &lt;group1&gt;:&lt;artifact1&gt;:&lt;version1&gt;<span class="p">;</span>&lt;group2&gt;...
+                                 If not given will be taken from project.clj
+  -m, --multi                   Generate each namespace documentation as a separate file
+  -l, --leiningen               Generate the documentation <span class="k">for</span> a Leiningen project file.
+  -e, --exclude EXCLUDE         Exclude <span class="nb">source</span> file<span class="o">(</span>s<span class="o">)</span> from the document generation process &lt;file1&gt;<span class="p">;</span>&lt;file2&gt;...
+                                 If not given will be taken from project.clj
+  -h, --help                    Show this <span class="nb">help</span>
+</code></pre></div>
 
-<span class="c1"># parse your src fodler and generate the files into ./doc</span>
-clj -m materiala.core -d doc src
-
-mkdocs serve <span class="c1"># dev</span>
-mkdocs build <span class="c1"># release</span>
+<p>I mainly copied <code>marginalia</code> options and adapted it to the newest version of
+<a href="https://github.com/clojure/tools.cli">clojure.tools.cli</a>.</p>
+<h3 id="limitation">Limitation<a class="headerlink" href="#limitation" title="Permanent link">&para;</a></h3>
+<p>The <code>default</code> symbol or <code>:default</code> key are reserved because on how multimethod
+works.</p>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<p>You will have to install the following python dependencies:</p>
+<div class="highlight"><pre><span></span><code>pip3 install mkdocs-material mkdocs-awesome-pages-plugin
 </code></pre></div>
 
 <h2 id="example-mkdocsyml">Example mkdocs.yml<a class="headerlink" href="#example-mkdocsyml" title="Permanent link">&para;</a></h2>
@@ -424,12 +721,17 @@ mkdocs build <span class="c1"># release</span>
 repository.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">site_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Materiala</span>
 <span class="nt">repo_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/davidpham87/materiala</span>
+<span class="nt">edit_uri</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">edit/master/doc</span>
 <span class="nt">repo_name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">github</span>
 <span class="nt">docs_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">doc</span>
-<span class="nt">site_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">docs</span> <span class="c1"># github like this one for displaying your website</span>
+<span class="nt">site_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">docs</span>
 
 <span class="nt">theme</span><span class="p">:</span>
   <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">material</span>
+  <span class="nt">logo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">images/logo.png</span>
+  <span class="nt">palette</span><span class="p">:</span>
+    <span class="nt">primary</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">red</span>
+
 <span class="nt">markdown_extensions</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admonition</span>
   <span class="p p-Indicator">-</span> <span class="nt">codehilite</span><span class="p">:</span>
@@ -441,14 +743,28 @@ repository.</p>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.inlinehilite</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span>
 
-<span class="nt">extra_javascript</span><span class="p">:</span>
+<span class="nt">extra_javascript</span><span class="p">:</span> <span class="c1"># Math</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML</span>
 
 <span class="nt">plugins</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span> <span class="c1"># necessary for search to work</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">awesome-pages</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">awesome-pages</span> <span class="c1"># automatic navigation</span>
 </code></pre></div>
 
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://davidpham87.github.io/materiala/">Materiala</a>, obviously.</li>
+</ul>
+<h2 id="see-also">See also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/gdeer81/marginalia">marginalia</a></li>
+<li><a href="https://squidfunk.github.io/mkdocs-material/">mkdocs-material</a></li>
+<li><a href="https://github.com/weavejester/codox">codox</a></li>
+<li><a href="https://cljdoc.org/">cljdoc</a></li>
+</ul>
+<h2 id="whats-up-with-logo">What's up with logo<a class="headerlink" href="#whats-up-with-logo" title="Permanent link">&para;</a></h2>
+<p>Well, I was too lazy to find a proper one, so I took the latex mathematical
+integral sign, which (<em>hopefully</em>) is still open source.</p>
 <h2 id="development">Development<a class="headerlink" href="#development" title="Permanent link">&para;</a></h2>
 <p>Run a repl (add your cider deps as well)</p>
 <div class="highlight"><pre><span></span><code>clojure -Adev
@@ -458,6 +774,11 @@ repository.</p>
 <div class="highlight"><pre><span></span><code>clojure -Atest
 </code></pre></div>
 
+<h2 id="todo">TODO<a class="headerlink" href="#todo" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Create an option to copy codox/cljcdoc link to source code instead of showing
+  the raw code directly.</li>
+</ul>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <p>Copyright (C) 2020 David Pham</p>
 <p>Distributed under the Eclipse Public License, the same as Clojure.</p>
@@ -480,13 +801,13 @@ repository.</p>
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
         
-          <a href="materiala/core/" title="materiala.core" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="extension/" title="Extension" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                materiala.core
+                Extension
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

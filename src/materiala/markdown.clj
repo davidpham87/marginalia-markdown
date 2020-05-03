@@ -7,6 +7,25 @@
    [clojure.tools.reader]
    [marginalia.parser :as p]))
 
+(defn drop-at
+  "Helper function to work with indices. Drop element from `coll` at indices
+  `idx`."
+  [idx coll]
+  (let [n (count coll)
+        idx (sort (if (sequential? idx) idx [idx]))]
+    (loop [indices idx
+           iteration 0
+           v coll]
+      (if (and (seq indices) (< iteration n))
+        (let [i (- (first indices) iteration)
+              v (vec v)]
+          (recur (rest indices)
+                 (inc iteration)
+                 (concat
+                  (subvec v 0 i)
+                  (subvec v (inc i)))))
+        (vec v)))))
+
 (defn path-to-doc [fn]
   {:ns (p/parse-ns (java.io.File. fn))
    :groups (p/parse-file fn)})
@@ -23,67 +42,71 @@
   ([s indent-level]
    (indent (str "```clojure\n" s "\n" "```\n\n") indent-level)))
 
-(defn render-def-form [{:keys [docstring raw forms level verb valid-call] :or {level 2}}]
-  (str (str/join (repeat level "#")) " " (second forms)
+(defn code-inline [s] (str "`" s "`"))
+
+(defn render-valid-call [valid-call]
+  (when valid-call
+    (-> (str/join "\n" (map str valid-call))
+        (str/replace #"," "")
+        (code-block 0))))
+
+(defn render-def-form
+  [{:keys [docstring raw forms level verb valid-call] :or {level 2}}]
+  (str (str/join (repeat level "#")) " "
+       (case verb
+         'ns (second forms)
+         (code-inline (second forms))) ;; keep the ear-muff variable to get md rendered
        "\n\n"
        (when docstring (str docstring "\n\n"))
-
-       (when valid-call
-         (code-block (str/join "\n" (map str valid-call)) 0))
-
+       (render-valid-call valid-call)
        "\n\n"
        "??? tip \"(" verb ")\"\n"
        (code-block raw)
        "\n"))
 
-(defmulti render-form
-  (fn [{:keys [type verb]}]
-    (case type
-      :comment [:comment]
-      :code [:code verb]
-      :default)))
+(defmulti render-code-form (fn [m] (-> m :verb keyword)))
 
+(defmethod render-code-form :default
+  [{:keys [docstring raw forms valid-call] :as m}]
+  (render-def-form m))
 
-(defmethod render-form :default [{:keys [docstring raw]}]
-  (str docstring "\n\n" (code-block raw)))
-
-(defmethod render-form [:code 'ns] [{:keys [docstring raw forms valid-call] :as m}]
+(defmethod render-code-form :ns
+  [{:keys [docstring raw forms valid-call] :as m}]
   (render-def-form (assoc m :level 1)))
 
-(defmethod render-form [:code 'def] [{:keys [docstring raw forms valid-call] :as m}]
-  (render-def-form m))
-
-(defmethod render-form [:code 'defn] [{:keys [docstring raw forms valid-call] :as m}]
-  (render-def-form m))
-
-(defmethod render-form [:code 'defn-] [{:keys [docstring raw forms valid-call] :as m}]
-  (render-def-form m))
-
-(defmethod render-form [:code 'defmacro] [{:keys [docstring raw forms valid-call] :as m}]
-  (render-def-form m))
-
-(defmethod render-form [:code 'defmulti] [{:keys [docstring raw forms valid-call] :as m}]
-  (render-def-form m))
-
-(defmethod render-form [:code 'defmethod]
-  [{:keys [docstring raw forms verb method-value valid-call] :as m}]
+(defmethod render-code-form :defmethod
+  [{:keys [docstring raw forms valid-call method-value verb] :as m}]
   (str (str/join (repeat 3 "#")) " " (second forms) " " method-value "\n"
        "\n"
        (when docstring (str docstring "\n\n"))
-       (when valid-call
-         (code-block (str/join "\n" (map str valid-call)) 0))
+       (render-valid-call valid-call)
        "\n\n"
        "??? info \"(" verb ")\"\n"
        (code-block raw 4)
        "\n"))
 
-(defmethod render-form [:comment] [{:keys [docstring raw forms] :as m}]
+(defmethod render-code-form :comment
+  [{:keys [raw] :as m}]
+  (str "## Rich Comment\n\n"
+       (code-block raw 0) "\n\n"))
+
+(defmulti render-form :type)
+
+(defmethod render-form :default [{:keys [docstring raw]}]
+  (str docstring "\n\n" (code-block raw)))
+
+;; This is a comment for testing comments in forms
+;; => (+ 2 2)
+
+(defmethod render-form :comment [{:keys [docstring raw forms] :as m}]
   (if (str/starts-with? raw "=>")
     (str "Result:" (code-block raw) "\n\n")
     (str raw "\n\n")))
 
-;; This is a comment for testing comments in forms
-;; => (+ 2 2)
+;; rely on two level dispatch to catch all possible verbs and extend it, to
+;; keep it open the flat hierarchy is a closed system.
+(defmethod render-form :code [m]
+  (render-code-form m))
 
 (defn function-forms
   "Retrived function calling forms.
@@ -91,24 +114,26 @@
   Inspired by clojure.core/fn and clojure.core/multimethod definition. Returns
   The valid function calls are returned. Expects valid code without docstrings."
   [name & sigs]
-  (let [sigs (if (vector? (first sigs)) (list sigs) sigs)]
+  (let [sigs (if (map? (first sigs)) (drop 1 sigs) sigs)
+        sigs (if (vector? (first sigs)) (list sigs) sigs)]
     (mapv #(seq (into [name] (first %))) sigs)))
+
+(defmulti extended-raw->forms first)
+(defmethod extended-raw->forms :default [_] {})
+
+(defmethod extended-raw->forms 'defn [forms]
+  {:valid-call (apply function-forms (drop 1 forms))})
+
+(defmethod extended-raw->forms 'defmethod [forms]
+  {:valid-call (apply function-forms (second forms) (drop 3 forms))
+   :method-value (nth forms 2)})
 
 (defn ^{:meta-data :true} raw->forms [raw]
   (binding [clojure.tools.reader/*read-eval* false]
     (let [forms (clojure.tools.reader/read-string raw)
-          multimethod? (= (first forms) 'defmethod)
-          verb (first forms)
-          name (second forms)]
-      {:forms forms
-       :verb verb
-       :var name
-       :valid-call
-       (condp = verb
-         'defn (apply function-forms (drop 1 forms))
-         'defmethod (apply function-forms (second forms) (drop 3 forms))
-         nil)
-       :method-value (when multimethod? (nth forms 2))})))
+          verb (first forms) name (second forms)]
+      (merge {:forms forms :verb verb :var name}
+             (extended-raw->forms forms)))))
 
 ;; comment here
 
@@ -137,3 +162,25 @@
 (defn uberdoc! [docs files options]
   (doseq [filename files]
     (save-md filename (assoc options :append true :target docs))))
+
+
+(comment
+
+  ;; Rich comment
+
+  (keyword (:verb (raw->forms "(rf/reg-sub
+::hello
+(fn [m] 3))")))
+
+  (raw->forms "(defn hello {:pre (constantly true)} ([m] 3))")
+
+  (p/parse "(defn hello \"hello\" {:pre (constantly true)} ([m] 3))")
+
+  (raw->forms "(reg-sub
+::hello
+(fn [m] 3))")
+
+  (raw->forms "(defmethod hello 3 [{:keys [a b]}] 3)")
+
+  (function-forms '(def hello {:pre identity} [m] 3))
+  )

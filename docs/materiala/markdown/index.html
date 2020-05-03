@@ -21,6 +21,12 @@
     
       <link rel="stylesheet" href="../../assets/stylesheets/main.c4007cdc.min.css">
       
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.8435c73a.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
       
     
     
@@ -40,7 +46,9 @@
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -61,8 +69,7 @@
   <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="../.." title="Materiala" class="md-header-nav__button md-logo" aria-label="Materiala">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     <label class="md-header-nav__button md-icon" for="__drawer">
@@ -148,8 +155,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Materiala" class="md-nav__button md-logo" aria-label="Materiala">
       
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <img src="../../images/logo.png" alt="logo">
 
     </a>
     Materiala
@@ -176,8 +182,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Materiala" class="md-nav__link">
-      Materiala
+    <a href="../.." title="Materiala (mkdocs-material + marginalia)" class="md-nav__link">
+      Materiala (mkdocs-material + marginalia)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../extension/" title="Extension" class="md-nav__link">
+      Extension
     </a>
   </li>
 
@@ -191,16 +209,16 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
     
-    <label class="md-nav__link" for="nav-2">
+    <label class="md-nav__link" for="nav-3">
       Materiala
       <span class="md-nav__icon md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
       </span>
     </label>
     <nav class="md-nav" aria-label="Materiala" data-md-level="1">
-      <label class="md-nav__title" for="nav-2">
+      <label class="md-nav__title" for="nav-3">
         <span class="md-nav__icon md-icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
         </span>
@@ -217,6 +235,18 @@
   <li class="md-nav__item">
     <a href="../core/" title="materiala.core" class="md-nav__link">
       materiala.core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../markdown-test/" title="materiala.markdown-test" class="md-nav__link">
+      materiala.markdown-test
     </a>
   </li>
 
@@ -262,6 +292,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#drop-at" class="md-nav__link">
+    drop-at
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#path-to-doc" class="md-nav__link">
     path-to-doc
   </a>
@@ -283,9 +320,64 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-inline" class="md-nav__link">
+    code-inline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-valid-call" class="md-nav__link">
+    render-valid-call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#render-def-form" class="md-nav__link">
     render-def-form
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-code-form" class="md-nav__link">
+    render-code-form
+  </a>
+  
+    <nav class="md-nav" aria-label="render-code-form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-default" class="md-nav__link">
+    render-code-form :default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-ns" class="md-nav__link">
+    render-code-form :ns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-defmethod" class="md-nav__link">
+    render-code-form :defmethod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-comment" class="md-nav__link">
+    render-code-form :comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -305,57 +397,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#render-form-code-quote-ns" class="md-nav__link">
-    render-form [:code (quote ns)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-def" class="md-nav__link">
-    render-form [:code (quote def)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defn" class="md-nav__link">
-    render-form [:code (quote defn)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defn-" class="md-nav__link">
-    render-form [:code (quote defn-)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmacro" class="md-nav__link">
-    render-form [:code (quote defmacro)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmulti" class="md-nav__link">
-    render-form [:code (quote defmulti)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmethod" class="md-nav__link">
-    render-form [:code (quote defmethod)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#render-form-comment" class="md-nav__link">
-    render-form [:comment]
+    render-form :comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-form-code" class="md-nav__link">
+    render-form :code
   </a>
   
 </li>
@@ -369,6 +419,33 @@
   <a href="#function-forms" class="md-nav__link">
     function-forms
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-raw-forms" class="md-nav__link">
+    extended-raw-&gt;forms
+  </a>
+  
+    <nav class="md-nav" aria-label="extended-raw-&gt;forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extended-raw-forms-quote-defn" class="md-nav__link">
+    extended-raw-&gt;forms (quote defn)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-raw-forms-quote-defmethod" class="md-nav__link">
+    extended-raw-&gt;forms (quote defmethod)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -400,10 +477,83 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rich-comment" class="md-nav__link">
+    Rich Comment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Extensions
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Extensions" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
+        Extensions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/core/" title="materiala.extensions.core" class="md-nav__link">
+      materiala.extensions.core
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/re-frame-test/" title="materiala.extensions.re-frame-test" class="md-nav__link">
+      materiala.extensions.re-frame-test
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../extensions/re-frame/" title="materiala.extensions.re-frame" class="md-nav__link">
+      materiala.extensions.re-frame
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -438,6 +588,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#drop-at" class="md-nav__link">
+    drop-at
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#path-to-doc" class="md-nav__link">
     path-to-doc
   </a>
@@ -459,9 +616,64 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#code-inline" class="md-nav__link">
+    code-inline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-valid-call" class="md-nav__link">
+    render-valid-call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#render-def-form" class="md-nav__link">
     render-def-form
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render-code-form" class="md-nav__link">
+    render-code-form
+  </a>
+  
+    <nav class="md-nav" aria-label="render-code-form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-default" class="md-nav__link">
+    render-code-form :default
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-ns" class="md-nav__link">
+    render-code-form :ns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-defmethod" class="md-nav__link">
+    render-code-form :defmethod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-code-form-comment" class="md-nav__link">
+    render-code-form :comment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -481,57 +693,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#render-form-code-quote-ns" class="md-nav__link">
-    render-form [:code (quote ns)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-def" class="md-nav__link">
-    render-form [:code (quote def)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defn" class="md-nav__link">
-    render-form [:code (quote defn)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defn-" class="md-nav__link">
-    render-form [:code (quote defn-)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmacro" class="md-nav__link">
-    render-form [:code (quote defmacro)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmulti" class="md-nav__link">
-    render-form [:code (quote defmulti)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#render-form-code-quote-defmethod" class="md-nav__link">
-    render-form [:code (quote defmethod)]
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#render-form-comment" class="md-nav__link">
-    render-form [:comment]
+    render-form :comment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render-form-code" class="md-nav__link">
+    render-form :code
   </a>
   
 </li>
@@ -545,6 +715,33 @@
   <a href="#function-forms" class="md-nav__link">
     function-forms
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extended-raw-forms" class="md-nav__link">
+    extended-raw-&gt;forms
+  </a>
+  
+    <nav class="md-nav" aria-label="extended-raw-&gt;forms">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extended-raw-forms-quote-defn" class="md-nav__link">
+    extended-raw-&gt;forms (quote defn)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-raw-forms-quote-defmethod" class="md-nav__link">
+    extended-raw-&gt;forms (quote defmethod)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -576,6 +773,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#rich-comment" class="md-nav__link">
+    Rich Comment
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -588,7 +792,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/davidpham87/materiala/edit/master/docs/materiala/markdown.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/davidpham87/materiala/edit/master/doc/materiala/markdown.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -608,7 +812,32 @@
 </code></pre></div>
 
 </details>
-<h2 id="path-to-doc">path-to-doc<a class="headerlink" href="#path-to-doc" title="Permanent link">&para;</a></h2>
+<h2 id="drop-at"><code>drop-at</code><a class="headerlink" href="#drop-at" title="Permanent link">&para;</a></h2>
+<p>Helper function to work with indices. Drop element from <code>coll</code> at indices
+  <code>idx</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">drop-at</span> <span class="nv">idx</span> <span class="nv">coll</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">drop-at</span>
+  <span class="p">[</span><span class="nv">idx</span> <span class="nv">coll</span><span class="p">]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">n</span> <span class="p">(</span><span class="nb">count </span><span class="nv">coll</span><span class="p">)</span>
+        <span class="nv">idx</span> <span class="p">(</span><span class="nb">sort </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">sequential?</span> <span class="nv">idx</span><span class="p">)</span> <span class="nv">idx</span> <span class="p">[</span><span class="nv">idx</span><span class="p">]))]</span>
+    <span class="p">(</span><span class="k">loop </span><span class="p">[</span><span class="nv">indices</span> <span class="nv">idx</span>
+           <span class="nv">iteration</span> <span class="mi">0</span>
+           <span class="nv">v</span> <span class="nv">coll</span><span class="p">]</span>
+      <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">seq </span><span class="nv">indices</span><span class="p">)</span> <span class="p">(</span><span class="nb">&lt; </span><span class="nv">iteration</span> <span class="nv">n</span><span class="p">))</span>
+        <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">i</span> <span class="p">(</span><span class="nb">- </span><span class="p">(</span><span class="nb">first </span><span class="nv">indices</span><span class="p">)</span> <span class="nv">iteration</span><span class="p">)</span>
+              <span class="nv">v</span> <span class="p">(</span><span class="nf">vec</span> <span class="nv">v</span><span class="p">)]</span>
+          <span class="p">(</span><span class="nf">recur</span> <span class="p">(</span><span class="nb">rest </span><span class="nv">indices</span><span class="p">)</span>
+                 <span class="p">(</span><span class="nb">inc </span><span class="nv">iteration</span><span class="p">)</span>
+                 <span class="p">(</span><span class="nf">concat</span>
+                  <span class="p">(</span><span class="nb">subvec </span><span class="nv">v</span> <span class="mi">0</span> <span class="nv">i</span><span class="p">)</span>
+                  <span class="p">(</span><span class="nb">subvec </span><span class="nv">v</span> <span class="p">(</span><span class="nb">inc </span><span class="nv">i</span><span class="p">)))))</span>
+        <span class="p">(</span><span class="nf">vec</span> <span class="nv">v</span><span class="p">)))))</span>
+</code></pre></div>
+
+</details>
+<h2 id="path-to-doc"><code>path-to-doc</code><a class="headerlink" href="#path-to-doc" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">path-to-doc</span> <span class="nv">fn</span><span class="p">)</span>
 </code></pre></div>
 
@@ -618,7 +847,7 @@
 </code></pre></div>
 
 </details>
-<h2 id="indent">indent<a class="headerlink" href="#indent" title="Permanent link">&para;</a></h2>
+<h2 id="indent"><code>indent</code><a class="headerlink" href="#indent" title="Permanent link">&para;</a></h2>
 <p>Indent string portion</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">indent</span> <span class="nv">s</span> <span class="nv">indent-level</span><span class="p">)</span>
 </code></pre></div>
@@ -630,25 +859,52 @@
 </code></pre></div>
 
 </details>
-<h2 id="code-block">code-block<a class="headerlink" href="#code-block" title="Permanent link">&para;</a></h2>
+<h2 id="code-block"><code>code-block</code><a class="headerlink" href="#code-block" title="Permanent link">&para;</a></h2>
 <p>Create code block from given string <code>s</code></p>
-<details class="tip"><summary>(defn-)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn- </span><span class="nv">code-block</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">code-block</span> <span class="nv">s</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">code-block</span> <span class="nv">s</span> <span class="nv">indent-level</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-block</span>
   <span class="p">([</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">s</span> <span class="mi">4</span><span class="p">))</span>
   <span class="p">([</span><span class="nv">s</span> <span class="nv">indent-level</span><span class="p">]</span>
    <span class="p">(</span><span class="nf">indent</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;```clojure\n&quot;</span> <span class="nv">s</span> <span class="s">&quot;\n&quot;</span> <span class="s">&quot;```\n\n&quot;</span><span class="p">)</span> <span class="nv">indent-level</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
-<h2 id="render-def-form">render-def-form<a class="headerlink" href="#render-def-form" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-def-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}})</span>
+<h2 id="code-inline"><code>code-inline</code><a class="headerlink" href="#code-inline" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">code-inline</span> <span class="nv">s</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-def-form</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}}]</span>
-  <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="nv">level</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span>
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-inline</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;`&quot;</span> <span class="nv">s</span> <span class="s">&quot;`&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+</details>
+<h2 id="render-valid-call"><code>render-valid-call</code><a class="headerlink" href="#render-valid-call" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-valid-call</span> <span class="p">[</span><span class="nv">valid-call</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">when </span><span class="nv">valid-call</span>
+    <span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map str </span><span class="nv">valid-call</span><span class="p">))</span>
+        <span class="p">(</span><span class="nf">str/replace</span> <span class="o">#</span><span class="s">&quot;,&quot;</span> <span class="p">)</span>
+        <span class="p">(</span><span class="nf">code-block</span> <span class="mi">0</span><span class="p">))))</span>
+</code></pre></div>
+
+</details>
+<h2 id="render-def-form"><code>render-def-form</code><a class="headerlink" href="#render-def-form" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-def-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}})</span>
+</code></pre></div>
+
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-def-form</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}}]</span>
+  <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="nv">level</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span>
+       <span class="p">(</span><span class="nf">case</span> <span class="nv">verb</span>
+         <span class="ss">&#39;ns</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span>
+         <span class="p">(</span><span class="nf">code-inline</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)))</span> <span class="c1">;; keep the ear-muff variable to get md rendered</span>
        <span class="s">&quot;\n\n&quot;</span>
        <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
-       <span class="p">(</span><span class="nb">when </span><span class="nv">valid-call</span>
-         <span class="p">(</span><span class="nf">code-block</span> <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map str </span><span class="nv">valid-call</span><span class="p">))</span> <span class="mi">0</span><span class="p">))</span>
+       <span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
        <span class="s">&quot;\n\n&quot;</span>
        <span class="s">&quot;??? tip \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
        <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span>
@@ -656,13 +912,61 @@
 </code></pre></div>
 
 </details>
-<h2 id="render-form">render-form<a class="headerlink" href="#render-form" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-form</span>
-  <span class="p">(</span><span class="k">fn </span><span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">type</span> <span class="nv">verb</span><span class="p">]}]</span>
-    <span class="p">(</span><span class="nf">case</span> <span class="nv">type</span>
-      <span class="ss">:comment</span> <span class="p">[</span><span class="ss">:comment</span><span class="p">]</span>
-      <span class="ss">:code</span> <span class="p">[</span><span class="ss">:code</span> <span class="nv">verb</span><span class="p">]</span>
-      <span class="ss">:default</span><span class="p">)))</span>
+<h2 id="render-code-form"><code>render-code-form</code><a class="headerlink" href="#render-code-form" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-code-form</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="nv">m</span> <span class="ss">:verb</span> <span class="nv">keyword</span><span class="p">)))</span>
+</code></pre></div>
+
+</details>
+<h3 id="render-code-form-default">render-code-form :default<a class="headerlink" href="#render-code-form-default" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:default</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
+</code></pre></div>
+
+</details>
+<h3 id="render-code-form-ns">render-code-form :ns<a class="headerlink" href="#render-code-form-ns" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:ns</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="nf">render-def-form</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">m</span> <span class="ss">:level</span> <span class="mi">1</span><span class="p">)))</span>
+</code></pre></div>
+
+</details>
+<h3 id="render-code-form-defmethod">render-code-form :defmethod<a class="headerlink" href="#render-code-form-defmethod" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span> <span class="nv">method-value</span> <span class="nv">verb</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:defmethod</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span> <span class="nv">method-value</span> <span class="nv">verb</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="mi">3</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="s">&quot; &quot;</span> <span class="nv">method-value</span> <span class="s">&quot;\n&quot;</span>
+       <span class="s">&quot;\n&quot;</span>
+       <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
+       <span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
+       <span class="s">&quot;\n\n&quot;</span>
+       <span class="s">&quot;??? info \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
+       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">4</span><span class="p">)</span>
+       <span class="s">&quot;\n&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+</details>
+<h3 id="render-code-form-comment">render-code-form :comment<a class="headerlink" href="#render-code-form-comment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:comment</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="nb">str </span><span class="s">&quot;## Rich Comment\n\n&quot;</span>
+       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">0</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
+</code></pre></div>
+
+</details>
+<h2 id="render-form"><code>render-form</code><a class="headerlink" href="#render-form" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-form</span> <span class="ss">:type</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
@@ -675,126 +979,85 @@
 </code></pre></div>
 
 </details>
-<h3 id="render-form-code-quote-ns">render-form [:code (quote ns)]<a class="headerlink" href="#render-form-code-quote-ns" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+<p>This is a comment for testing comments in forms
+=&gt; (+ 2 2)</p>
+<h3 id="render-form-comment">render-form :comment<a class="headerlink" href="#render-form-comment" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;ns</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">m</span> <span class="ss">:level</span> <span class="mi">1</span><span class="p">)))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-def">render-form [:code (quote def)]<a class="headerlink" href="#render-form-code-quote-def" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;def</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-defn">render-form [:code (quote defn)]<a class="headerlink" href="#render-form-code-quote-defn" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;defn</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-defn-">render-form [:code (quote defn-)]<a class="headerlink" href="#render-form-code-quote-defn-" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;defn-</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-defmacro">render-form [:code (quote defmacro)]<a class="headerlink" href="#render-form-code-quote-defmacro" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;defmacro</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-defmulti">render-form [:code (quote defmulti)]<a class="headerlink" href="#render-form-code-quote-defmulti" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;defmulti</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-code-quote-defmethod">render-form [:code (quote defmethod)]<a class="headerlink" href="#render-form-code-quote-defmethod" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">verb</span> <span class="nv">method-value</span> <span class="nv">valid-call</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:code</span> <span class="ss">&#39;defmethod</span><span class="p">]</span>
-  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">verb</span> <span class="nv">method-value</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
-  <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="mi">3</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="s">&quot; &quot;</span> <span class="nv">method-value</span> <span class="s">&quot;\n&quot;</span>
-       <span class="s">&quot;\n&quot;</span>
-       <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
-       <span class="p">(</span><span class="nb">when </span><span class="nv">valid-call</span>
-         <span class="p">(</span><span class="nf">code-block</span> <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map str </span><span class="nv">valid-call</span><span class="p">))</span> <span class="mi">0</span><span class="p">))</span>
-       <span class="s">&quot;\n\n&quot;</span>
-       <span class="s">&quot;??? info \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
-       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">4</span><span class="p">)</span>
-       <span class="s">&quot;\n&quot;</span><span class="p">))</span>
-</code></pre></div>
-
-</details>
-<h3 id="render-form-comment">render-form [:comment]<a class="headerlink" href="#render-form-comment" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span>, <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
-</code></pre></div>
-
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="p">[</span><span class="ss">:comment</span><span class="p">]</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:comment</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">str/starts-with?</span> <span class="nv">raw</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Result:&quot;</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">str </span><span class="nv">raw</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
-<p>This is a comment for testing comments in forms
-=&gt; (+ 2 2)</p>
-<h2 id="function-forms">function-forms<a class="headerlink" href="#function-forms" title="Permanent link">&para;</a></h2>
+<h3 id="render-form-code">render-form :code<a class="headerlink" href="#render-form-code" title="Permanent link">&para;</a></h3>
+<p>rely on two level dispatch to catch all possible verbs and extend it, to
+keep it open the flat hierarchy is a closed system.</p>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="nv">m</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:code</span> <span class="p">[</span><span class="nv">m</span><span class="p">]</span>
+  <span class="p">(</span><span class="nf">render-code-form</span> <span class="nv">m</span><span class="p">))</span>
+</code></pre></div>
+
+</details>
+<h2 id="function-forms"><code>function-forms</code><a class="headerlink" href="#function-forms" title="Permanent link">&para;</a></h2>
 <p>Retrived function calling forms.</p>
 <p>Inspired by clojure.core/fn and clojure.core/multimethod definition. Returns
   The valid function calls are returned. Expects valid code without docstrings.</p>
-<details class="tip"><summary>(defn-)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn- </span><span class="nv">function-forms</span>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">function-forms</span> <span class="nb">name </span><span class="o">&amp;</span> <span class="nv">sigs</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">function-forms</span>
   <span class="p">[</span><span class="nb">name </span><span class="o">&amp;</span> <span class="nv">sigs</span><span class="p">]</span>
-  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">sigs</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">vector? </span><span class="p">(</span><span class="nb">first </span><span class="nv">sigs</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="nv">sigs</span><span class="p">)</span> <span class="nv">sigs</span><span class="p">)]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">sigs</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">map? </span><span class="p">(</span><span class="nb">first </span><span class="nv">sigs</span><span class="p">))</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">1</span> <span class="nv">sigs</span><span class="p">)</span> <span class="nv">sigs</span><span class="p">)</span>
+        <span class="nv">sigs</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">vector? </span><span class="p">(</span><span class="nb">first </span><span class="nv">sigs</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="nv">sigs</span><span class="p">)</span> <span class="nv">sigs</span><span class="p">)]</span>
     <span class="p">(</span><span class="nf">mapv</span> <span class="o">#</span><span class="p">(</span><span class="nb">seq </span><span class="p">(</span><span class="nb">into </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span> <span class="p">(</span><span class="nb">first </span><span class="nv">%</span><span class="p">)))</span> <span class="nv">sigs</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
-<h2 id="raw-forms">raw-&gt;forms<a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
+<h2 id="extended-raw-forms"><code>extended-raw-&gt;forms</code><a class="headerlink" href="#extended-raw-forms" title="Permanent link">&para;</a></h2>
+<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">extended-raw-&gt;forms</span> <span class="nv">first</span><span class="p">)</span>
+<span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="p">{})</span>
+</code></pre></div>
+
+</details>
+<h3 id="extended-raw-forms-quote-defn">extended-raw-&gt;forms (quote defn)<a class="headerlink" href="#extended-raw-forms-quote-defn" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defn</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
+  <span class="p">{</span><span class="ss">:valid-call</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">1</span> <span class="nv">forms</span><span class="p">))})</span>
+</code></pre></div>
+
+</details>
+<h3 id="extended-raw-forms-quote-defmethod">extended-raw-&gt;forms (quote defmethod)<a class="headerlink" href="#extended-raw-forms-quote-defmethod" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defmethod</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
+  <span class="p">{</span><span class="ss">:valid-call</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">3</span> <span class="nv">forms</span><span class="p">))</span>
+   <span class="ss">:method-value</span> <span class="p">(</span><span class="nb">nth </span><span class="nv">forms</span> <span class="mi">2</span><span class="p">)})</span>
+</code></pre></div>
+
+</details>
+<h2 id="raw-forms"><code>raw-&gt;forms</code><a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="nv">raw</span><span class="p">)</span>
 </code></pre></div>
 
 <details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="p">{</span><span class="ss">:meta-data</span> <span class="ss">:true</span><span class="p">}</span> <span class="nv">raw-&gt;forms</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">binding </span><span class="p">[</span><span class="nv">clojure.tools.reader/*read-eval*</span> <span class="nv">false</span><span class="p">]</span>
     <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">forms</span> <span class="p">(</span><span class="nf">clojure.tools.reader/read-string</span> <span class="nv">raw</span><span class="p">)</span>
-          <span class="nv">multimethod?</span> <span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nb">first </span><span class="nv">forms</span><span class="p">)</span> <span class="ss">&#39;defmethod</span><span class="p">)</span>
-          <span class="nv">verb</span> <span class="p">(</span><span class="nb">first </span><span class="nv">forms</span><span class="p">)</span>
-          <span class="nb">name </span><span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)]</span>
-      <span class="p">{</span><span class="ss">:forms</span> <span class="nv">forms</span>
-       <span class="ss">:verb</span> <span class="nv">verb</span>
-       <span class="ss">:var</span> <span class="nv">name</span>
-       <span class="ss">:valid-call</span>
-       <span class="p">(</span><span class="nf">condp</span> <span class="nb">= </span><span class="nv">verb</span>
-         <span class="ss">&#39;defn</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">1</span> <span class="nv">forms</span><span class="p">))</span>
-         <span class="ss">&#39;defmethod</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">3</span> <span class="nv">forms</span><span class="p">))</span>
-         <span class="nv">nil</span><span class="p">)</span>
-       <span class="ss">:method-value</span> <span class="p">(</span><span class="nb">when </span><span class="nv">multimethod?</span> <span class="p">(</span><span class="nb">nth </span><span class="nv">forms</span> <span class="mi">2</span><span class="p">))})))</span>
+          <span class="nv">verb</span> <span class="p">(</span><span class="nb">first </span><span class="nv">forms</span><span class="p">)</span> <span class="nb">name </span><span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)]</span>
+      <span class="p">(</span><span class="nb">merge </span><span class="p">{</span><span class="ss">:forms</span> <span class="nv">forms</span> <span class="ss">:verb</span> <span class="nv">verb</span> <span class="ss">:var</span> <span class="nv">name</span><span class="p">}</span>
+             <span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)))))</span>
 </code></pre></div>
 
 </details>
 <p>comment here</p>
-<h2 id="save-md">save-md<a class="headerlink" href="#save-md" title="Permanent link">&para;</a></h2>
+<h2 id="save-md"><code>save-md</code><a class="headerlink" href="#save-md" title="Permanent link">&para;</a></h2>
 <p>Save markdown built from clojure source.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">save-md</span> <span class="nv">filename</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
@@ -813,7 +1076,7 @@
 </code></pre></div>
 
 </details>
-<h2 id="multidoc">multidoc!<a class="headerlink" href="#multidoc" title="Permanent link">&para;</a></h2>
+<h2 id="multidoc"><code>multidoc!</code><a class="headerlink" href="#multidoc" title="Permanent link">&para;</a></h2>
 <p>Generate an output file for each of provided namespace.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">multidoc!</span> <span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
@@ -828,7 +1091,7 @@
 </code></pre></div>
 
 </details>
-<h2 id="uberdoc">uberdoc!<a class="headerlink" href="#uberdoc" title="Permanent link">&para;</a></h2>
+<h2 id="uberdoc"><code>uberdoc!</code><a class="headerlink" href="#uberdoc" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">uberdoc!</span> <span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
 
@@ -837,20 +1100,21 @@
     <span class="p">(</span><span class="nf">save-md</span> <span class="nv">filename</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">options</span> <span class="ss">:append</span> <span class="nv">true</span> <span class="ss">:target</span> <span class="nv">docs</span><span class="p">))))</span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">comment</span>
-  <span class="p">(</span><span class="nf">function-forms</span> <span class="ss">&#39;hello</span> <span class="o">&#39;</span><span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&#39;</span><span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">))</span>
-  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="o">&#39;</span><span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)))</span>
-  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(defn hello [x] 3)&quot;</span><span class="p">)</span>
-  <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">[</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span>, <span class="ss">:verb</span> <span class="nv">defn</span>, <span class="ss">:var</span> <span class="nv">hello</span>, <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="nv">x</span><span class="p">)]</span>, <span class="ss">:method-value</span> <span class="nv">nil</span><span class="p">}</span>
-  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(defn hello ([x] 3) ([x y] 3))&quot;</span><span class="p">)</span>
-  <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span> <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">))</span>, <span class="ss">:verb</span> <span class="nv">defn</span>, <span class="ss">:var</span> <span class="nv">hello</span>, <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="nv">x</span><span class="p">)</span> <span class="p">(</span><span class="nf">hello</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)]</span>, <span class="ss">:method-value</span> <span class="nv">nil</span><span class="p">}</span>
-  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(defmethod hello 3 [{:keys [a b]}] 3)&quot;</span><span class="p">)</span>
-  <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="kd">defmethod </span><span class="nv">hello</span> <span class="mi">3</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]}]</span> <span class="mi">3</span><span class="p">)</span>, <span class="ss">:verb</span> <span class="nv">defmethod</span>, <span class="ss">:var</span> <span class="nv">hello</span>, <span class="ss">:valid-call</span> <span class="p">[(</span><span class="nf">hello</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">a</span> <span class="nv">b</span><span class="p">]})]</span>, <span class="ss">:method-value</span> <span class="mi">3</span><span class="p">}</span>
-  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(def hello 3)&quot;</span><span class="p">)</span>
-  <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="k">def </span><span class="nv">hello</span> <span class="mi">3</span><span class="p">)</span>, <span class="ss">:verb</span> <span class="nv">def</span>, <span class="ss">:var</span> <span class="nv">hello</span>, <span class="ss">:valid-call</span> <span class="nv">nil</span>, <span class="ss">:method-value</span> <span class="nv">nil</span><span class="p">})</span>
-</code></pre></div>
-
 </details>
+<h2 id="rich-comment">Rich Comment<a class="headerlink" href="#rich-comment" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">comment</span>
+  <span class="c1">;; Rich comment</span>
+  <span class="p">(</span><span class="nb">keyword </span><span class="p">(</span><span class="ss">:verb</span> <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(rf/reg-sub</span>
+<span class="s">::hello</span>
+<span class="s">(fn [m] 3))&quot;</span><span class="p">)))</span>
+  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(defn hello {:pre (constantly true)} ([m] 3))&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">p/parse</span> <span class="s">&quot;(defn hello \&quot;hello\&quot; {:pre (constantly true)} ([m] 3))&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(reg-sub</span>
+<span class="s">::hello</span>
+<span class="s">(fn [m] 3))&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="s">&quot;(defmethod hello 3 [{:keys [a b]}] 3)&quot;</span><span class="p">)</span>
+  <span class="p">(</span><span class="nf">function-forms</span> <span class="o">&#39;</span><span class="p">(</span><span class="k">def </span><span class="nv">hello</span> <span class="p">{</span><span class="ss">:pre</span> <span class="nv">identity</span><span class="p">}</span> <span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="mi">3</span><span class="p">)))</span>
+</code></pre></div>
                 
               
               
@@ -869,7 +1133,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../core/" title="materiala.core" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../markdown-test/" title="materiala.markdown-test" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -878,11 +1142,25 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                materiala.core
+                materiala.markdown-test
               </div>
             </div>
           </a>
         
+        
+          <a href="../extensions/core/" title="materiala.extensions.core" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                materiala.extensions.core
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

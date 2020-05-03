@@ -2,7 +2,6 @@
 
 Simple markdown conversion with some cool features, such as math rendering
   $$ e^{i\pi} = -1 $$
-  
 
 
 
@@ -10,29 +9,30 @@ Simple markdown conversion with some cool features, such as math rendering
     ```clojure
     (ns materiala.core
       "Simple markdown conversion with some cool features, such as math rendering
-      $$ e^{i\\pi} = -1 $$
-      "
+      $$ e^{i\\pi} = -1 $$"
       (:require [clojure.java.io :as io]
                 [clojure.tools.cli :refer (parse-opts)]
+                [clojure.string :as str]
                 [marginalia.core :as mc]
-                [materiala.markdown]))
+                [materiala.markdown]
+                [materiala.extensions.core]))
     ```
-## *docs*
+## `*docs*`
 
 
 
 ??? tip "(def)"
     ```clojure
-    (def ^{:dynamic true} *docs* "./docs")
+    (def ^{:dynamic true} *docs* "./doc")
     ```
-## cli-opts
+## `cli-opts`
 
 
 
 ??? tip "(def)"
     ```clojure
     (def cli-opts
-      [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./docs"]
+      [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./doc"]
        ["-f" "--file FILE" "File into which the documentation will be written"]
        ["-n" "--name NAME" "Project name - if not given will be taken from project.clj"]
        ["-v" "--version VERSION" "Project version - if not given will be taken from project.clj"]
@@ -46,7 +46,7 @@ Simple markdown conversion with some cool features, such as math rendering
                                      If not given will be taken from project.clj"]
        ["-h" "--help" "Show this help"]])
     ```
-## run-materiala
+## `run-materiala`
 
 Default generation: given a collection of filepaths in a project, find the .clj
    files at these paths and, if Clojure source files are found:
@@ -68,14 +68,14 @@ Default generation: given a collection of filepaths in a project, find the .clj
       [& args]
       (let [user-parsed-options (parse-opts args cli-opts)
             {:keys [dir file name version desc deps multi
-                    leiningen exclude arguments help]} (:options user-parsed-options)
-            files arguments
+                    leiningen exclude help]} (:options user-parsed-options)
+            files (:arguments user-parsed-options)
             sources (distinct (mc/format-sources (seq files)))
             sources (if leiningen (cons leiningen sources) sources)]
         (when help
           (println (:summary user-parsed-options)))
         (if (and sources (not help))
-          (binding [*docs* dir]
+          (binding [*docs* (str/trim dir)]
             (let [project-clj (when (.exists (io/file "project.clj"))
                                 (mc/parse-project-file))
                   choose #(or %1 %2)
@@ -108,7 +108,7 @@ Default generation: given a collection of filepaths in a project, find the .clj
             (println "Wrong number of arguments passed to Marginalia.")
             (println (:summary user-parsed-options))))))
     ```
-## -main
+## `-main`
 
 ```clojure
 (-main & args)

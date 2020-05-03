@@ -1,11 +1,16 @@
 site_name: Materiala
 repo_url: https://github.com/davidpham87/materiala
+edit_uri: edit/master/doc
 repo_name: github
 docs_dir: doc
 site_dir: docs
 
 theme:
   name: material
+  logo: images/logo.png
+  palette:
+    primary: red
+
 markdown_extensions:
   - admonition
   - codehilite:
