@@ -59,12 +59,13 @@ considered for usage and extension by coding a specific writer.
 
 ## Is it a good idea?
 
-Well, smashing strings together and having a DSL goes definitively goes against
-Clojure's philosophy and main lessons. But from this particular problem, I just
-wanted to have some user friendly searchable docs for my coworkers/friends and
-thanks to Lisp homoiconicity and Clojure simplicity, parsing is not *too*
-hard. For big open source libraries published on Clojars, I would still look at
-[cljdoc](https://cljdoc.org/).
+Well... Smashing strings together and having a DSL for representing data
+definitively goes against Clojure's philosophy and main lessons.
+
+But from this particular problem, I just wanted to have some user friendly
+searchable docs for my coworkers/friends and thanks to Lisp homoiconicity and
+Clojure simplicity, parsing is not *too* hard. For big open source libraries
+published on Clojars, I would still look at [cljdoc](https://cljdoc.org/).
 
 ## Extension
 
