@@ -92,11 +92,6 @@ clojure -m materiala.core -h
 I mainly copied `marginalia` options and adapted it to the newest version of
 [clojure.tools.cli](https://github.com/clojure/tools.cli).
 
-### Limitation
-
-The `default` symbol or `:default` key are reserved because on how multimethod
-works.
-
 ## Dependencies
 
 You will have to install the following python dependencies:

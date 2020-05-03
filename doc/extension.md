@@ -97,3 +97,8 @@ Then you can just call it (make sure `materiala` is on your classpath)
 ``` bash
 clojure -m user.doc.ns src
 ```
+
+g## Limitation
+
+The `default` symbol or `:default` key are reserved because on how multimethod
+works.
