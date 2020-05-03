@@ -55,12 +55,22 @@ parser.
 ## Technical Solution
 
 Marginalia API was *easier* to leverage (and marginalia had a nice website), so
-the library is build on its parser.
+the library is build on its parser. Our writer acts in two steps:
+
+1. For code output from marginalia, the available information is extended (such
+   as valid call forms from function).
+2. Render the data into markdown consumed by mkdocs.
 
 As alternative, codox (on which neanderthal and the uncomplicate ecosystem
 built their documentation) was also considered for usage and extension by
 coding a specific writer. However, most of the function codox writer are
 private and I did not want to depend on private api.
+
+Another alternative would have been to study how mkdocs and its extensions
+converts the markdown into `html` and targets that output directly to keep the
+data centric view of Clojure. The drawback of this solution is time, and we
+totally loss the leverage on mkdocs. Moreover, it is doubtful that the user
+will require to parse the markdown output again.
 
 ## Is it a good idea?
 

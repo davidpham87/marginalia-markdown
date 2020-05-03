@@ -37,7 +37,8 @@
     (str/join "\n" (map #(str indent-space %) (str/split s #"\n")))))
 
 (defn code-block
-  "Create code block from given string `s`"
+  "Create code block from given string `s` and indentation level
+  `indent-level`."
   ([s] (code-block s 4))
   ([s indent-level]
    (indent (str "```clojure\n" s "\n" "```\n\n") indent-level)))

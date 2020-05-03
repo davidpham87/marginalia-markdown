@@ -4,25 +4,41 @@ The idea of the rendering is to create the markdown string from the raw forms
 and dispatching on the verb of the form (after keywordization [is a real name?])
 
 ``` clojure
+(defn indent
+  "Indent string portion"
+  [s indent-level]
+  (let [indent-space (str/join "" (repeat indent-level " "))]
+    (str/join "\n" (map #(str indent-space %) (str/split s #"\n")))))
+
+(defn code-block
+  "Create code block from given string `s`"
+  ([s] (str "```clojure\n" s "\n" "```\n\n")))
+
 (defmethod render-code-form :defmethod
   [{:keys [docstring raw forms valid-call method-value verb] :as m}]
   (str (str/join (repeat 3 "#")) " " (second forms) " " method-value "\n"
        "\n"
        (when docstring (str docstring "\n\n"))
-       (render-valid-call valid-valid-call)
+       (when valid-call
+         (-> (str/join "\n" (map str valid-call))
+             (str/replace #"," "")
+             code-block))
        "\n\n"
        "??? info \"(" verb ")\"\n"
-       (code-block raw 4)
+       (indent (code-block raw) 4)
        "\n"))
 
 (defmethod render-code-form :comment
   [{:keys [raw] :as m}]
-  (str "## Comment \n\n"
-       (code-block raw 0) "\n\n"))
+  (str "## Rich Comment \n\n"
+       (code-block raw) "\n\n"))
+
+;; yes, string smashing is fun as long as we don't have to parse it xD
+;; materiala.markdown provides helpers to reduce the code smashing.
 ```
 
-The common top level pattern is the `(def-verb-symbol var-name [vector-of-args]
-& body)`, which is default case render this case. However, the number of top
+The common top level pattern in code file is the `(def-verb-symbol var-name &
+body)`, which is default case render this case. However, the number of top
 level forms is infinite thanks the power of macros (e.g. re-frame's
 `reg-event-fx`). For these case, you can:
 
