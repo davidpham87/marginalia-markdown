@@ -47,9 +47,9 @@ domain.
 ## Status
 
 Status: **alpha**, although I will follow
-[https://www.youtube.com/watch?v=oyLBGkS5ICk](spec-ulation) to make my best to
-avoid breaking changes. The biggest issue is the library leverages on
-marginalia's parser.
+[spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk) to make my best to
+avoid breaking changes. I want to be a nice person, so I will do my best to not break
+your code. The biggest issue is the library leverages on marginalia's parser.
 
 ## Technical Solution
 
