@@ -4,12 +4,14 @@ Example of extension not perfect parsing of re-frame forms
 
 
 
-??? tip "(ns)"
+??? tip  "(`ns`)"
+
     ```clojure
     (ns materiala.extensions.re-frame
       (:require
        [materiala.markdown :as mm :refer (render-code-form code-block code-inline)]))
     ```
+
 ## `:rf/reg-event-fx`
 
 
@@ -18,18 +20,21 @@ Example of extension not perfect parsing of re-frame forms
 
 
 
-??? tip "(derive)"
+??? tip  "(`derive`)"
+
     ```clojure
     (derive :rf/reg-event-fx ::register)
     (derive :rf/reg-sub ::register)
     ```
+
 ### render-code-form :user/register
 
 ```clojure
 (render-code-form {:keys [raw forms]})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form ::register
       [{:keys [raw forms]}]
@@ -53,7 +58,8 @@ no shortcut here, have to do it
 (render-code-form m)
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :reg-sub
       [m]
@@ -65,7 +71,8 @@ no shortcut here, have to do it
 (render-code-form m)
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :reg-event-fx
       [m]

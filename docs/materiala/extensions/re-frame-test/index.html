@@ -502,7 +502,7 @@
                 
                 <h1 id="materialaextensionsre-frame-test">materiala.extensions.re-frame-test<a class="headerlink" href="#materialaextensionsre-frame-test" title="Permanent link">&para;</a></h1>
 <p>Example namespace for rendering custom macros</p>
-<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.extensions.re-frame-test</span>
+<details class="tip"><summary>(<code>ns</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.extensions.re-frame-test</span>
   <span class="p">(</span><span class="ss">:require</span>
    <span class="p">[</span><span class="nv">re-frame.core</span> <span class="ss">:as</span> <span class="nv">rf</span> <span class="ss">:refer</span> <span class="p">(</span><span class="nf">reg-event-fx</span> <span class="nv">reg-sub</span><span class="p">)]</span>
    <span class="p">[</span><span class="nv">materiala.markdown</span> <span class="ss">:as</span> <span class="nv">mm</span><span class="p">]</span>
@@ -542,7 +542,7 @@
 <h2 id="reg-sub-userdispath-fn"><code>reg-sub</code>: <code>:user/dispath-fn</code><a class="headerlink" href="#reg-sub-userdispath-fn" title="Permanent link">&para;</a></h2>
 <p>Dispatch-fn: <code>println</code></p>
 <h2 id="re-frame-simple-register"><code>re-frame-simple-register</code><a class="headerlink" href="#re-frame-simple-register" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">re-frame-simple-register</span>
+<details class="tip"><summary>(<code>deftest</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">re-frame-simple-register</span>
   <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">raw</span> <span class="nv">markdown</span><span class="p">]</span>
       <span class="p">(</span><span class="nb">= </span><span class="nv">markdown</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">mm/raw-&gt;forms</span> <span class="nv">raw</span><span class="p">)</span>
                       <span class="p">(</span><span class="nb">assoc </span><span class="ss">:type</span> <span class="ss">:code</span> <span class="ss">:raw</span> <span class="nv">raw</span><span class="p">)</span>

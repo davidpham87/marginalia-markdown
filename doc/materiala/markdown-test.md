@@ -2,17 +2,20 @@
 
 
 
-??? tip "(ns)"
+??? tip  "(`ns`)"
+
     ```clojure
     (ns materiala.markdown-test
       (:require [materiala.markdown :as sut]
                 [clojure.test :as t :refer (deftest is are)]))
     ```
+
 ## `intent`
 
 
 
-??? tip "(deftest)"
+??? tip  "(`deftest`)"
+
     ```clojure
     (deftest intent
       (are [x s level] (= x (sut/indent s level))
@@ -21,22 +24,26 @@
         "  a" "a" 2
         "  a\n  b" "a\nb" 2))
     ```
+
 ## `code-block`
 
 
 
-??? tip "(deftest)"
+??? tip  "(`deftest`)"
+
     ```clojure
     (deftest code-block
       (are [s code indent] (= s (sut/code-block code indent))
         "```clojure\nx\n```" 'x 0
         "    ```clojure\n    x\n    ```" 'x 4))
     ```
+
 ## `function-forms`
 
 
 
-??? tip "(deftest)"
+??? tip  "(`deftest`)"
+
     ```clojure
     (deftest function-forms
       (are [calling-forms function-symbol fn-tail]
@@ -45,11 +52,13 @@
         '[(f x) (f x y)] 'f '[([x] 3) ([x y] 3)]
         '[(f x) (f x & args)] 'f '[([x] 3) ([x & args] 3)]))
     ```
+
 ## `raw->forms`
 
 
 
-??? tip "(deftest)"
+??? tip  "(`deftest`)"
+
     ```clojure
     (deftest raw->forms
       (are [code-string result] (= result (sut/raw->forms code-string))
@@ -70,3 +79,6 @@
     (fn [m] 3))"
         '{:forms (reg-sub :hello (fn [m] 3)), :verb reg-sub, :var :hello}))
     ```
+
+add test with malformed code.
+

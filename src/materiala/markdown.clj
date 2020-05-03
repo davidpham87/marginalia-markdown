@@ -74,7 +74,7 @@
        (render-valid-call valid-call)
        "\n\n"
        (admonition {:content (code-block raw 0) :type "tip"
-                    :title (str "(" verb ")") :optional true})
+                    :title (str "(" (code-inline verb) ")") :optional true})
        "\n\n"))
 
 (defmulti render-code-form (fn [m] (-> m :verb keyword)))
@@ -95,7 +95,7 @@
        (render-valid-call valid-call)
        "\n\n"
        (admonition {:content (code-block raw 0) :type "info"
-                    :title (str "(" verb ")")
+                    :title (str "(" (code-inline verb) ")")
                     :optional true})
        "\n"))
 
@@ -224,26 +224,4 @@
 
   (raw->forms "(defmethod hello 3 [{:keys [a b]}] 3)")
 
-  (function-forms '(def hello {:pre identity} [m] 3))
-
-  (require '[clojure.string :as str])
-
-  (let [raw (str '(defn titles []
-                (let [xs (execute-query! ["select * from titles"])]
-                  (into [] (comp (filter #(str/ends-with? (:file %) ".org\""))
-                                 (map parse-lisp-record)
-                                 (map #(update % :file expand-home))) xs))))]
-    (p/parse raw)
-    #_(evaluate-form raw))
-
-
-  (defn evaluate-form [raw]
-    (try
-      (clojure.tools.reader/read-string raw)
-      (catch Exception e
-        (println "Failed to read:" raw)
-        (println "Exception was:")
-        (println (select-keys (bean e) [:data :message])))))
-
-
-  )
+  (function-forms '(def hello {:pre identity} [m] 3)))

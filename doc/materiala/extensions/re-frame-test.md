@@ -4,7 +4,8 @@ Example namespace for rendering custom macros
 
 
 
-??? tip "(ns)"
+??? tip  "(`ns`)"
+
     ```clojure
     (ns materiala.extensions.re-frame-test
       (:require
@@ -13,6 +14,7 @@ Example namespace for rendering custom macros
        [materiala.extensions.re-frame]
        [clojure.test :as t :refer (deftest are is)]))
     ```
+
 ## `reg-event-fx`: `:user/initialize`
 
 ```clojure
@@ -57,7 +59,8 @@ Dispatch-fn: `println`
 
 
 
-??? tip "(deftest)"
+??? tip  "(`deftest`)"
+
     ```clojure
     (deftest re-frame-simple-register
       (are [raw markdown]
@@ -73,3 +76,4 @@ Dispatch-fn: `println`
     dispatch-all-fn)"
         "## Event: `:materiala.extensions.re-frame/all`\n\nDispatch-fn: `dispatch-all-fn`\n\n"))
     ```
+

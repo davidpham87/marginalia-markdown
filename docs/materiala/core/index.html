@@ -473,7 +473,7 @@
                 <h1 id="materialacore">materiala.core<a class="headerlink" href="#materialacore" title="Permanent link">&para;</a></h1>
 <p>Simple markdown conversion with some cool features, such as math rendering
   $$ e^{i\pi} = -1 $$</p>
-<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.core</span>
+<details class="tip"><summary>(<code>ns</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.core</span>
   <span class="s">&quot;Simple markdown conversion with some cool features, such as math rendering</span>
 <span class="s">  $$ e^{i\\pi} = -1 $$&quot;</span>
   <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">clojure.java.io</span> <span class="ss">:as</span> <span class="nv">io</span><span class="p">]</span>
@@ -486,12 +486,12 @@
 
 </details>
 <h2 id="docs"><code>*docs*</code><a class="headerlink" href="#docs" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(def)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="o">^</span><span class="p">{</span><span class="ss">:dynamic</span> <span class="nv">true</span><span class="p">}</span> <span class="nv">*docs*</span> <span class="s">&quot;./doc&quot;</span><span class="p">)</span>
+<details class="tip"><summary>(<code>def</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="o">^</span><span class="p">{</span><span class="ss">:dynamic</span> <span class="nv">true</span><span class="p">}</span> <span class="nv">*docs*</span> <span class="s">&quot;./doc&quot;</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
 <h2 id="cli-opts"><code>cli-opts</code><a class="headerlink" href="#cli-opts" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(def)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">cli-opts</span>
+<details class="tip"><summary>(<code>def</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="k">def </span><span class="nv">cli-opts</span>
   <span class="p">[[</span><span class="s">&quot;-d&quot;</span> <span class="s">&quot;--dir DIR&quot;</span> <span class="s">&quot;Directory into which the documentation will be written&quot;</span> <span class="ss">:default</span> <span class="s">&quot;./doc&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-f&quot;</span> <span class="s">&quot;--file FILE&quot;</span> <span class="s">&quot;File into which the documentation will be written&quot;</span><span class="p">]</span>
    <span class="p">[</span><span class="s">&quot;-n&quot;</span> <span class="s">&quot;--name NAME&quot;</span> <span class="s">&quot;Project name - if not given will be taken from project.clj&quot;</span><span class="p">]</span>
@@ -521,7 +521,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">run-materiala</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">run-materiala</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">run-materiala</span>
   <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">user-parsed-options</span> <span class="p">(</span><span class="nf">parse-opts</span> <span class="nv">args</span> <span class="nv">cli-opts</span><span class="p">)</span>
         <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">dir</span> <span class="nv">file</span> <span class="nb">name </span><span class="nv">version</span> <span class="nv">desc</span> <span class="nv">deps</span> <span class="nv">multi</span>
@@ -571,7 +571,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">-main</span> <span class="o">&amp;</span> <span class="nv">args</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">-main</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">-main</span> <span class="p">[</span><span class="o">&amp;</span> <span class="nv">args</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">apply </span><span class="nv">run-materiala</span> <span class="nv">args</span><span class="p">))</span>
 </code></pre></div>
 

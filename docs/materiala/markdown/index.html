@@ -320,6 +320,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#admonition" class="md-nav__link">
+    admonition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-inline" class="md-nav__link">
     code-inline
   </a>
@@ -446,6 +453,20 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-form" class="md-nav__link">
+    evaluate-form*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-form_1" class="md-nav__link">
+    evaluate-form
+  </a>
   
 </li>
       
@@ -616,6 +637,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#admonition" class="md-nav__link">
+    admonition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-inline" class="md-nav__link">
     code-inline
   </a>
@@ -746,6 +774,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#evaluate-form" class="md-nav__link">
+    evaluate-form*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evaluate-form_1" class="md-nav__link">
+    evaluate-form
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raw-forms" class="md-nav__link">
     raw-&gt;forms
   </a>
@@ -802,7 +844,7 @@
                 
                 <h1 id="materialamarkdown">materiala.markdown<a class="headerlink" href="#materialamarkdown" title="Permanent link">&para;</a></h1>
 <p>Utilities for parsing code into markdown</p>
-<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.markdown</span>
+<details class="tip"><summary>(<code>ns</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.markdown</span>
   <span class="p">(</span><span class="ss">:require</span>
    <span class="p">[</span><span class="nv">clojure.java.io</span><span class="p">]</span>
    <span class="p">[</span><span class="nv">clojure.string</span> <span class="ss">:as</span> <span class="nv">str</span><span class="p">]</span>
@@ -818,7 +860,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">drop-at</span> <span class="nv">idx</span> <span class="nv">coll</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">drop-at</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">drop-at</span>
   <span class="p">[</span><span class="nv">idx</span> <span class="nv">coll</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">n</span> <span class="p">(</span><span class="nb">count </span><span class="nv">coll</span><span class="p">)</span>
         <span class="nv">idx</span> <span class="p">(</span><span class="nb">sort </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">sequential?</span> <span class="nv">idx</span><span class="p">)</span> <span class="nv">idx</span> <span class="p">[</span><span class="nv">idx</span><span class="p">]))]</span>
@@ -841,7 +883,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">path-to-doc</span> <span class="nv">fn</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">path-to-doc</span> <span class="p">[</span><span class="nv">fn</span><span class="p">]</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">path-to-doc</span> <span class="p">[</span><span class="nv">fn</span><span class="p">]</span>
   <span class="p">{</span><span class="ss">:ns</span> <span class="p">(</span><span class="nf">p/parse-ns</span> <span class="p">(</span><span class="nf">java.io.File.</span> <span class="nv">fn</span><span class="p">))</span>
    <span class="ss">:groups</span> <span class="p">(</span><span class="nf">p/parse-file</span> <span class="nv">fn</span><span class="p">)})</span>
 </code></pre></div>
@@ -852,7 +894,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">indent</span> <span class="nv">s</span> <span class="nv">indent-level</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">indent</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">indent</span>
   <span class="p">[</span><span class="nv">s</span> <span class="nv">indent-level</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">indent-space</span> <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;&quot;</span> <span class="p">(</span><span class="nb">repeat </span><span class="nv">indent-level</span> <span class="s">&quot; &quot;</span><span class="p">))]</span>
     <span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">str </span><span class="nv">indent-space</span> <span class="nv">%</span><span class="p">)</span> <span class="p">(</span><span class="nf">str/split</span> <span class="nv">s</span> <span class="o">#</span><span class="s">&quot;\n&quot;</span><span class="p">)))))</span>
@@ -865,10 +907,30 @@
 <span class="p">(</span><span class="nf">code-block</span> <span class="nv">s</span> <span class="nv">indent-level</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-block</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-block</span>
   <span class="p">([</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">s</span> <span class="mi">4</span><span class="p">))</span>
   <span class="p">([</span><span class="nv">s</span> <span class="nv">indent-level</span><span class="p">]</span>
    <span class="p">(</span><span class="nf">indent</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;```clojure\n&quot;</span> <span class="nv">s</span> <span class="s">&quot;\n&quot;</span> <span class="s">&quot;```\n\n&quot;</span><span class="p">)</span> <span class="nv">indent-level</span><span class="p">)))</span>
+</code></pre></div>
+
+</details>
+<h2 id="admonition"><code>admonition</code><a class="headerlink" href="#admonition" title="Permanent link">&para;</a></h2>
+<div class="admonition danger">
+<p class="admonition-title">Parsing error</p>
+<p>The displayed code is not valid. This is due to Marginalia's parsing code.</p>
+</div>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">admonition</span>
+  <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">content</span> <span class="nv">type</span> <span class="nv">optional</span> <span class="nv">open</span> <span class="nv">title</span><span class="p">]</span>
+    <span class="ss">:or</span> <span class="p">{</span><span class="nv">optional</span> <span class="nv">false</span> <span class="nv">open</span> <span class="nv">false</span><span class="p">}}]</span>
+  <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">cond</span>
+         <span class="p">(</span><span class="nb">not </span><span class="nv">optional</span><span class="p">)</span> <span class="s">&quot;!!! &quot;</span>
+         <span class="p">(</span><span class="nb">and </span><span class="nv">optional</span> <span class="nv">open</span><span class="p">)</span> <span class="s">&quot;???+&quot;</span>
+         <span class="ss">:else</span> <span class="s">&quot;??? &quot;</span><span class="p">)</span>
+       <span class="nv">type</span>
+       <span class="s">&quot; &quot;</span>
+       <span class="p">(</span><span class="nb">when </span><span class="nv">title</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot; \ title &quot;</span><span class="sc">\)</span><span class="p">)</span>
+       <span class="s">&quot;\n\n&quot;</span>
+       <span class="p">(</span><span class="nf">indent</span> <span class="nv">content</span> <span class="mi">4</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
@@ -876,7 +938,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">code-inline</span> <span class="nv">s</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-inline</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;`&quot;</span> <span class="nv">s</span> <span class="s">&quot;`&quot;</span><span class="p">))</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">code-inline</span> <span class="p">[</span><span class="nv">s</span><span class="p">]</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;`&quot;</span> <span class="nv">s</span> <span class="s">&quot;`&quot;</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
@@ -884,7 +946,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-valid-call</span> <span class="p">[</span><span class="nv">valid-call</span><span class="p">]</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-valid-call</span> <span class="p">[</span><span class="nv">valid-call</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">when </span><span class="nv">valid-call</span>
     <span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nf">str/join</span> <span class="s">&quot;\n&quot;</span> <span class="p">(</span><span class="nb">map str </span><span class="nv">valid-call</span><span class="p">))</span>
         <span class="p">(</span><span class="nf">str/replace</span> <span class="o">#</span><span class="s">&quot;,&quot;</span> <span class="p">)</span>
@@ -896,7 +958,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-def-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}})</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-def-form</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">render-def-form</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">level</span> <span class="nv">verb</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:or</span> <span class="p">{</span><span class="nv">level</span> <span class="mi">2</span><span class="p">}}]</span>
   <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="nv">level</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span>
        <span class="p">(</span><span class="nf">case</span> <span class="nv">verb</span>
@@ -906,14 +968,14 @@
        <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
        <span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
        <span class="s">&quot;\n\n&quot;</span>
-       <span class="s">&quot;??? tip \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
-       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span>
-       <span class="s">&quot;\n&quot;</span><span class="p">))</span>
+       <span class="p">(</span><span class="nf">admonition</span> <span class="p">{</span><span class="ss">:content</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">0</span><span class="p">)</span> <span class="ss">:type</span> <span class="s">&quot;tip&quot;</span>
+                    <span class="ss">:title</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;(&quot;</span> <span class="p">(</span><span class="nf">code-inline</span> <span class="nv">verb</span><span class="p">)</span> <span class="s">&quot;)&quot;</span><span class="p">)</span> <span class="ss">:optional</span> <span class="nv">true</span><span class="p">})</span>
+       <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
 </code></pre></div>
 
 </details>
 <h2 id="render-code-form"><code>render-code-form</code><a class="headerlink" href="#render-code-form" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-code-form</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="nv">m</span> <span class="ss">:verb</span> <span class="nv">keyword</span><span class="p">)))</span>
+<details class="tip"><summary>(<code>defmulti</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-code-form</span> <span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">m</span><span class="p">]</span> <span class="p">(</span><span class="nb">-&gt; </span><span class="nv">m</span> <span class="ss">:verb</span> <span class="nv">keyword</span><span class="p">)))</span>
 </code></pre></div>
 
 </details>
@@ -921,7 +983,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:default</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:default</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="nf">render-def-form</span> <span class="nv">m</span><span class="p">))</span>
 </code></pre></div>
@@ -931,7 +993,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:ns</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:ns</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="nf">render-def-form</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">m</span> <span class="ss">:level</span> <span class="mi">1</span><span class="p">)))</span>
 </code></pre></div>
@@ -941,15 +1003,16 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span> <span class="nv">method-value</span> <span class="nv">verb</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:defmethod</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:defmethod</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span> <span class="nv">valid-call</span> <span class="nv">method-value</span> <span class="nv">verb</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">str/join</span> <span class="p">(</span><span class="nb">repeat </span><span class="mi">3</span> <span class="s">&quot;#&quot;</span><span class="p">))</span> <span class="s">&quot; &quot;</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="s">&quot; &quot;</span> <span class="nv">method-value</span> <span class="s">&quot;\n&quot;</span>
        <span class="s">&quot;\n&quot;</span>
        <span class="p">(</span><span class="nb">when </span><span class="nv">docstring</span> <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
        <span class="p">(</span><span class="nf">render-valid-call</span> <span class="nv">valid-call</span><span class="p">)</span>
        <span class="s">&quot;\n\n&quot;</span>
-       <span class="s">&quot;??? info \&quot;(&quot;</span> <span class="nv">verb</span> <span class="s">&quot;)\&quot;\n&quot;</span>
-       <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">4</span><span class="p">)</span>
+       <span class="p">(</span><span class="nf">admonition</span> <span class="p">{</span><span class="ss">:content</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">0</span><span class="p">)</span> <span class="ss">:type</span> <span class="s">&quot;info&quot;</span>
+                    <span class="ss">:title</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;(&quot;</span> <span class="p">(</span><span class="nf">code-inline</span> <span class="nv">verb</span><span class="p">)</span> <span class="s">&quot;)&quot;</span><span class="p">)</span>
+                    <span class="ss">:optional</span> <span class="nv">true</span><span class="p">})</span>
        <span class="s">&quot;\n&quot;</span><span class="p">))</span>
 </code></pre></div>
 
@@ -958,7 +1021,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-code-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:comment</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-code-form</span> <span class="ss">:comment</span>
   <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="nb">str </span><span class="s">&quot;## Rich Comment\n\n&quot;</span>
        <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span> <span class="mi">0</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">))</span>
@@ -966,7 +1029,7 @@
 
 </details>
 <h2 id="render-form"><code>render-form</code><a class="headerlink" href="#render-form" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-form</span> <span class="ss">:type</span><span class="p">)</span>
+<details class="tip"><summary>(<code>defmulti</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">render-form</span> <span class="ss">:type</span><span class="p">)</span>
 </code></pre></div>
 
 </details>
@@ -974,7 +1037,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span><span class="p">]})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:default</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span><span class="p">]}]</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:default</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span><span class="p">]}]</span>
   <span class="p">(</span><span class="nb">str </span><span class="nv">docstring</span> <span class="s">&quot;\n\n&quot;</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)))</span>
 </code></pre></div>
 
@@ -985,7 +1048,7 @@
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:comment</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:comment</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span> <span class="nv">raw</span> <span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
   <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">str/starts-with?</span> <span class="nv">raw</span> <span class="s">&quot;=&gt;&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">str </span><span class="s">&quot;Result:&quot;</span> <span class="p">(</span><span class="nf">code-block</span> <span class="nv">raw</span><span class="p">)</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">str </span><span class="nv">raw</span> <span class="s">&quot;\n\n&quot;</span><span class="p">)))</span>
@@ -998,7 +1061,7 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">render-form</span> <span class="nv">m</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:code</span> <span class="p">[</span><span class="nv">m</span><span class="p">]</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">render-form</span> <span class="ss">:code</span> <span class="p">[</span><span class="nv">m</span><span class="p">]</span>
   <span class="p">(</span><span class="nf">render-code-form</span> <span class="nv">m</span><span class="p">))</span>
 </code></pre></div>
 
@@ -1010,7 +1073,7 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">function-forms</span> <span class="nb">name </span><span class="o">&amp;</span> <span class="nv">sigs</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">function-forms</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">function-forms</span>
   <span class="p">[</span><span class="nb">name </span><span class="o">&amp;</span> <span class="nv">sigs</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">sigs</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">map? </span><span class="p">(</span><span class="nb">first </span><span class="nv">sigs</span><span class="p">))</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">1</span> <span class="nv">sigs</span><span class="p">)</span> <span class="nv">sigs</span><span class="p">)</span>
         <span class="nv">sigs</span> <span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">vector? </span><span class="p">(</span><span class="nb">first </span><span class="nv">sigs</span><span class="p">))</span> <span class="p">(</span><span class="nb">list </span><span class="nv">sigs</span><span class="p">)</span> <span class="nv">sigs</span><span class="p">)]</span>
@@ -1019,7 +1082,7 @@ keep it open the flat hierarchy is a closed system.</p>
 
 </details>
 <h2 id="extended-raw-forms"><code>extended-raw-&gt;forms</code><a class="headerlink" href="#extended-raw-forms" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(defmulti)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">extended-raw-&gt;forms</span> <span class="nv">first</span><span class="p">)</span>
+<details class="tip"><summary>(<code>defmulti</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmulti </span><span class="nv">extended-raw-&gt;forms</span> <span class="nv">first</span><span class="p">)</span>
 <span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">:default</span> <span class="p">[</span><span class="nv">_</span><span class="p">]</span> <span class="p">{})</span>
 </code></pre></div>
 
@@ -1028,7 +1091,7 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defn</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defn</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
   <span class="p">{</span><span class="ss">:valid-call</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">1</span> <span class="nv">forms</span><span class="p">))})</span>
 </code></pre></div>
 
@@ -1037,22 +1100,57 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="info"><summary>(defmethod)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defmethod</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
+<details class="info"><summary>(<code>defmethod</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defmethod </span><span class="nv">extended-raw-&gt;forms</span> <span class="ss">&#39;defmethod</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span>
   <span class="p">{</span><span class="ss">:valid-call</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">function-forms</span> <span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)</span> <span class="p">(</span><span class="nb">drop </span><span class="mi">3</span> <span class="nv">forms</span><span class="p">))</span>
    <span class="ss">:method-value</span> <span class="p">(</span><span class="nb">nth </span><span class="nv">forms</span> <span class="mi">2</span><span class="p">)})</span>
 </code></pre></div>
 
 </details>
-<h2 id="raw-forms"><code>raw-&gt;forms</code><a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="nv">raw</span><span class="p">)</span>
+<h2 id="evaluate-form"><code>evaluate-form*</code><a class="headerlink" href="#evaluate-form" title="Permanent link">&para;</a></h2>
+<p>Brute force elementary parser on raw string to provide when for non valid
+  forms.</p>
+<p>We use marginalia parser and sometimes the parse function does not return as
+  valid raw form. In this case, an elementary custom algorithm is provided to
+  still provide the information to the user.</p>
+<details class="tip"><summary>(<code>defn-</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn- </span><span class="nv">evaluate-form*</span>
+  <span class="p">[</span><span class="nv">raw</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">docstring</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">docstring</span>
+        <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nf">admonition</span>
+              <span class="p">{</span><span class="ss">:content</span> <span class="p">(</span><span class="nb">str </span><span class="s">&quot;The displayed code is not valid. &quot;</span>
+                             <span class="s">&quot;This is due to Marginalia&#39;s parsing code.&quot;</span><span class="p">)</span>
+               <span class="ss">:type</span> <span class="s">&quot;danger&quot;</span> <span class="ss">:title</span> <span class="s">&quot;Parsing error&quot;</span> <span class="ss">:optional</span> <span class="nv">false</span><span class="p">})</span>
+             <span class="s">&quot;\n\n&quot;</span>
+             <span class="nv">docstring</span><span class="p">)</span>
+        <span class="nv">forms</span> <span class="p">(</span><span class="nf">-&gt;&gt;</span> <span class="p">(</span><span class="nf">str/split</span> <span class="p">(</span><span class="nb">subs </span><span class="nv">raw</span> <span class="mi">1</span> <span class="p">(</span><span class="nb">dec </span><span class="p">(</span><span class="nb">dec </span><span class="p">(</span><span class="nb">count </span><span class="nv">raw</span><span class="p">))))</span> <span class="o">#</span><span class="s">&quot; &quot;</span> <span class="mi">3</span><span class="p">)</span>
+                   <span class="p">(</span><span class="nb">map </span><span class="nv">str/trim</span><span class="p">))]</span>
+    <span class="p">(</span><span class="nb">assoc </span><span class="nv">m</span> <span class="ss">:docstring</span> <span class="nv">docstring</span> <span class="ss">:forms</span> <span class="nv">forms</span><span class="p">)))</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="p">{</span><span class="ss">:meta-data</span> <span class="ss">:true</span><span class="p">}</span> <span class="nv">raw-&gt;forms</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span>
-  <span class="p">(</span><span class="nb">binding </span><span class="p">[</span><span class="nv">clojure.tools.reader/*read-eval*</span> <span class="nv">false</span><span class="p">]</span>
-    <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">forms</span> <span class="p">(</span><span class="nf">clojure.tools.reader/read-string</span> <span class="nv">raw</span><span class="p">)</span>
-          <span class="nv">verb</span> <span class="p">(</span><span class="nb">first </span><span class="nv">forms</span><span class="p">)</span> <span class="nb">name </span><span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)]</span>
-      <span class="p">(</span><span class="nb">merge </span><span class="p">{</span><span class="ss">:forms</span> <span class="nv">forms</span> <span class="ss">:verb</span> <span class="nv">verb</span> <span class="ss">:var</span> <span class="nv">name</span><span class="p">}</span>
-             <span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">)))))</span>
+</details>
+<h2 id="evaluate-form_1"><code>evaluate-form</code><a class="headerlink" href="#evaluate-form_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">evaluate-form</span> <span class="nv">raw</span> <span class="nv">m</span><span class="p">)</span>
+</code></pre></div>
+
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">evaluate-form</span> <span class="p">[</span><span class="nv">raw</span> <span class="nv">m</span><span class="p">]</span>
+  <span class="p">(</span><span class="nf">try</span>
+    <span class="p">(</span><span class="nb">binding </span><span class="p">[</span><span class="nv">clojure.tools.reader/*read-eval*</span> <span class="nv">false</span><span class="p">]</span>
+      <span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="nf">clojure.tools.reader/read-string</span> <span class="nv">raw</span><span class="p">)})</span>
+    <span class="p">(</span><span class="nf">catch</span> <span class="nv">Exception</span> <span class="nv">_</span>
+      <span class="p">(</span><span class="nb">println </span><span class="s">&quot;\nParser mistake from marginalia, attempt to rescue with brute force.&quot;</span><span class="p">)</span>
+      <span class="p">(</span><span class="nb">println </span><span class="p">(</span><span class="nb">str </span><span class="nv">raw</span> <span class="s">&quot;\n&quot;</span><span class="p">))</span>
+      <span class="p">(</span><span class="nf">evaluate-form*</span> <span class="nv">raw</span> <span class="nv">m</span><span class="p">))))</span>
+</code></pre></div>
+
+</details>
+<h2 id="raw-forms"><code>raw-&gt;forms</code><a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="p">{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">})</span>
+</code></pre></div>
+
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="p">{</span><span class="ss">:meta-data</span> <span class="ss">:true</span><span class="p">}</span> <span class="nv">raw-&gt;forms</span> <span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}]</span>
+  <span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">forms</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">m</span><span class="p">}</span> <span class="p">(</span><span class="nf">evaluate-form</span> <span class="nv">raw</span> <span class="nv">m</span><span class="p">)</span>
+        <span class="nv">verb</span> <span class="p">(</span><span class="nb">first </span><span class="nv">forms</span><span class="p">)</span>
+        <span class="nb">name </span><span class="p">(</span><span class="nb">second </span><span class="nv">forms</span><span class="p">)]</span>
+    <span class="p">(</span><span class="nb">merge </span><span class="nv">m</span> <span class="p">{</span><span class="ss">:forms</span> <span class="nv">forms</span> <span class="ss">:verb</span> <span class="nv">verb</span> <span class="ss">:var</span> <span class="nv">name</span><span class="p">}</span> <span class="p">(</span><span class="nf">extended-raw-&gt;forms</span> <span class="nv">forms</span><span class="p">))))</span>
 </code></pre></div>
 
 </details>
@@ -1062,15 +1160,15 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">save-md</span> <span class="nv">filename</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">save-md</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">save-md</span>
   <span class="p">[</span><span class="nv">filename</span> <span class="nv">options</span><span class="p">]</span>
   <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">target</span> <span class="p">(</span><span class="ss">:target</span> <span class="nv">options</span> <span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nb">second </span><span class="p">(</span><span class="nb">re-find </span><span class="o">#</span><span class="s">&quot;(.*)\.(\w+)$&quot;</span> <span class="nv">filename</span><span class="p">))</span> <span class="s">&quot;.md&quot;</span><span class="p">))]</span>
     <span class="p">(</span><span class="nf">clojure.java.io/make-parents</span> <span class="nv">target</span><span class="p">)</span>
     <span class="p">(</span><span class="nb">when-not </span><span class="p">(</span><span class="ss">:append</span> <span class="nv">options</span><span class="p">)</span>
       <span class="p">(</span><span class="nf">spit</span> <span class="nv">target</span> <span class="s">&quot;&quot;</span><span class="p">))</span>
-    <span class="p">(</span><span class="nb">doseq </span><span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">raw</span> <span class="nv">type</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">all</span><span class="p">}</span> <span class="p">(</span><span class="nf">p/parse-file</span> <span class="nv">filename</span><span class="p">)]</span>
+    <span class="p">(</span><span class="nb">doseq </span><span class="p">[{</span><span class="ss">:keys</span> <span class="p">[</span><span class="nv">type</span><span class="p">]</span> <span class="ss">:as</span> <span class="nv">all</span><span class="p">}</span> <span class="p">(</span><span class="nf">p/parse-file</span> <span class="nv">filename</span><span class="p">)]</span>
       <span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">all</span> <span class="p">(</span><span class="nf">cond-&gt;</span> <span class="nv">all</span>
-                  <span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="nv">type</span> <span class="ss">:code</span><span class="p">)</span> <span class="p">(</span><span class="ss">:raw</span> <span class="nv">all</span><span class="p">))</span> <span class="p">(</span><span class="nb">merge </span><span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="nv">raw</span><span class="p">))</span>
+                  <span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">= </span><span class="nv">type</span> <span class="ss">:code</span><span class="p">)</span> <span class="p">(</span><span class="ss">:raw</span> <span class="nv">all</span><span class="p">))</span> <span class="p">(</span><span class="nb">merge </span><span class="p">(</span><span class="nf">raw-&gt;forms</span> <span class="nv">all</span><span class="p">))</span>
                   <span class="ss">:always</span> <span class="nv">identity</span><span class="p">)]</span>
         <span class="p">(</span><span class="nf">spit</span> <span class="nv">target</span> <span class="p">(</span><span class="nf">render-form</span> <span class="nv">all</span><span class="p">)</span> <span class="ss">:append</span> <span class="nv">true</span><span class="p">)))))</span>
 </code></pre></div>
@@ -1081,7 +1179,7 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">multidoc!</span> <span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">multidoc!</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">multidoc!</span>
   <span class="p">[</span><span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">filename</span> <span class="nv">files</span><span class="p">]</span>
     <span class="p">(</span><span class="nb">println </span><span class="nv">filename</span><span class="p">)</span>
@@ -1095,7 +1193,7 @@ keep it open the flat hierarchy is a closed system.</p>
 <div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">uberdoc!</span> <span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">)</span>
 </code></pre></div>
 
-<details class="tip"><summary>(defn)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">uberdoc!</span> <span class="p">[</span><span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">]</span>
+<details class="tip"><summary>(<code>defn</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">defn </span><span class="nv">uberdoc!</span> <span class="p">[</span><span class="nv">docs</span> <span class="nv">files</span> <span class="nv">options</span><span class="p">]</span>
   <span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">filename</span> <span class="nv">files</span><span class="p">]</span>
     <span class="p">(</span><span class="nf">save-md</span> <span class="nv">filename</span> <span class="p">(</span><span class="nb">assoc </span><span class="nv">options</span> <span class="ss">:append</span> <span class="nv">true</span> <span class="ss">:target</span> <span class="nv">docs</span><span class="p">))))</span>
 </code></pre></div>

@@ -471,14 +471,14 @@
                 
                 
                 <h1 id="materialamarkdown-test">materiala.markdown-test<a class="headerlink" href="#materialamarkdown-test" title="Permanent link">&para;</a></h1>
-<details class="tip"><summary>(ns)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.markdown-test</span>
+<details class="tip"><summary>(<code>ns</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="kd">ns </span><span class="nv">materiala.markdown-test</span>
   <span class="p">(</span><span class="ss">:require</span> <span class="p">[</span><span class="nv">materiala.markdown</span> <span class="ss">:as</span> <span class="nv">sut</span><span class="p">]</span>
             <span class="p">[</span><span class="nv">clojure.test</span> <span class="ss">:as</span> <span class="nv">t</span> <span class="ss">:refer</span> <span class="p">(</span><span class="nf">deftest</span> <span class="nv">is</span> <span class="nv">are</span><span class="p">)]))</span>
 </code></pre></div>
 
 </details>
 <h2 id="intent"><code>intent</code><a class="headerlink" href="#intent" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">intent</span>
+<details class="tip"><summary>(<code>deftest</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">intent</span>
   <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">x</span> <span class="nv">s</span> <span class="nv">level</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">x</span> <span class="p">(</span><span class="nf">sut/indent</span> <span class="nv">s</span> <span class="nv">level</span><span class="p">))</span>
     <span class="s">&quot;a&quot;</span> <span class="s">&quot;a&quot;</span> <span class="mi">0</span>
     <span class="s">&quot; a&quot;</span> <span class="s">&quot;a&quot;</span> <span class="mi">1</span>
@@ -488,7 +488,7 @@
 
 </details>
 <h2 id="code-block"><code>code-block</code><a class="headerlink" href="#code-block" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">code-block</span>
+<details class="tip"><summary>(<code>deftest</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">code-block</span>
   <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">s</span> <span class="nv">code</span> <span class="nv">indent</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">s</span> <span class="p">(</span><span class="nf">sut/code-block</span> <span class="nv">code</span> <span class="nv">indent</span><span class="p">))</span>
     <span class="s">&quot;```clojure\nx\n```&quot;</span> <span class="ss">&#39;x</span> <span class="mi">0</span>
     <span class="s">&quot;    ```clojure\n    x\n    ```&quot;</span> <span class="ss">&#39;x</span> <span class="mi">4</span><span class="p">))</span>
@@ -496,7 +496,7 @@
 
 </details>
 <h2 id="function-forms"><code>function-forms</code><a class="headerlink" href="#function-forms" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">function-forms</span>
+<details class="tip"><summary>(<code>deftest</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">function-forms</span>
   <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">calling-forms</span> <span class="nv">function-symbol</span> <span class="nv">fn-tail</span><span class="p">]</span>
       <span class="p">(</span><span class="nb">= </span><span class="nv">calling-forms</span> <span class="p">(</span><span class="nb">apply </span><span class="nv">sut/function-forms</span> <span class="nv">function-symbol</span> <span class="nv">fn-tail</span><span class="p">))</span>
     <span class="o">&#39;</span><span class="p">[(</span><span class="nf">f</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nf">f</span> <span class="nv">x</span><span class="p">)]</span> <span class="ss">&#39;f</span> <span class="o">&#39;</span><span class="p">[([</span><span class="nv">x</span> <span class="nv">y</span><span class="p">]</span> <span class="mi">3</span><span class="p">)</span> <span class="p">([</span><span class="nv">x</span><span class="p">]</span> <span class="mi">3</span><span class="p">)]</span>
@@ -506,7 +506,7 @@
 
 </details>
 <h2 id="raw-forms"><code>raw-&gt;forms</code><a class="headerlink" href="#raw-forms" title="Permanent link">&para;</a></h2>
-<details class="tip"><summary>(deftest)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">raw-&gt;forms</span>
+<details class="tip"><summary>(<code>deftest</code>)</summary><div class="highlight"><pre><span></span><code><span class="p">(</span><span class="nf">deftest</span> <span class="nv">raw-&gt;forms</span>
   <span class="p">(</span><span class="nf">are</span> <span class="p">[</span><span class="nv">code-string</span> <span class="nv">result</span><span class="p">]</span> <span class="p">(</span><span class="nb">= </span><span class="nv">result</span> <span class="p">(</span><span class="nf">sut/raw-&gt;forms</span> <span class="nv">code-string</span><span class="p">))</span>
     <span class="s">&quot;(def hello 3)&quot;</span>
     <span class="o">&#39;</span><span class="p">{</span><span class="ss">:forms</span> <span class="p">(</span><span class="k">def </span><span class="nv">hello</span> <span class="mi">3</span><span class="p">)</span> <span class="ss">:verb</span> <span class="k">def </span><span class="ss">:var</span> <span class="nv">hello</span><span class="p">}</span>
@@ -527,6 +527,7 @@
 </code></pre></div>
 
 </details>
+<p>add test with malformed code.</p>
                 
               
               

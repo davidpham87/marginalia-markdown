@@ -4,7 +4,8 @@ Utilities for parsing code into markdown
 
 
 
-??? tip "(ns)"
+??? tip  "(`ns`)"
+
     ```clojure
     (ns materiala.markdown
       (:require
@@ -14,6 +15,7 @@ Utilities for parsing code into markdown
        [clojure.tools.reader]
        [marginalia.parser :as p]))
     ```
+
 ## `drop-at`
 
 Helper function to work with indices. Drop element from `coll` at indices
@@ -23,7 +25,8 @@ Helper function to work with indices. Drop element from `coll` at indices
 (drop-at idx coll)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn drop-at
       [idx coll]
@@ -42,18 +45,21 @@ Helper function to work with indices. Drop element from `coll` at indices
                       (subvec v (inc i)))))
             (vec v)))))
     ```
+
 ## `path-to-doc`
 
 ```clojure
 (path-to-doc fn)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn path-to-doc [fn]
       {:ns (p/parse-ns (java.io.File. fn))
        :groups (p/parse-file fn)})
     ```
+
 ## `indent`
 
 Indent string portion
@@ -62,13 +68,15 @@ Indent string portion
 (indent s indent-level)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn indent
       [s indent-level]
       (let [indent-space (str/join "" (repeat indent-level " "))]
         (str/join "\n" (map #(str indent-space %) (str/split s #"\n")))))
     ```
+
 ## `code-block`
 
 Create code block from given string `s`
@@ -78,30 +86,62 @@ Create code block from given string `s`
 (code-block s indent-level)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn code-block
       ([s] (code-block s 4))
       ([s indent-level]
        (indent (str "```clojure\n" s "\n" "```\n\n") indent-level)))
     ```
+
+## `admonition`
+
+!!! danger  "Parsing error"
+
+    The displayed code is not valid. This is due to Marginalia's parsing code.
+
+
+
+
+
+??? tip  "(`defn`)"
+
+    ```clojure
+    (defn admonition
+      [{:keys [content type optional open title]
+        :or {optional false open false}}]
+      (str (cond
+             (not optional) "!!! "
+             (and optional open) "???+"
+             :else "??? ")
+           type
+           " "
+           (when title (str " \ title "\))
+           "\n\n"
+           (indent content 4)))
+    ```
+
 ## `code-inline`
 
 ```clojure
 (code-inline s)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn code-inline [s] (str "`" s "`"))
     ```
+
 ## `render-valid-call`
 
 ```clojure
 (render-valid-call valid-call)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn render-valid-call [valid-call]
       (when valid-call
@@ -109,13 +149,15 @@ Create code block from given string `s`
             (str/replace #"," )
             (code-block 0))))
     ```
+
 ## `render-def-form`
 
 ```clojure
 (render-def-form {:keys [docstring raw forms level verb valid-call] :or {level 2}})
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn render-def-form
       [{:keys [docstring raw forms level verb valid-call] :or {level 2}}]
@@ -127,25 +169,29 @@ Create code block from given string `s`
            (when docstring (str docstring "\n\n"))
            (render-valid-call valid-call)
            "\n\n"
-           "??? tip \"(" verb ")\"\n"
-           (code-block raw)
-           "\n"))
+           (admonition {:content (code-block raw 0) :type "tip"
+                        :title (str "(" (code-inline verb) ")") :optional true})
+           "\n\n"))
     ```
+
 ## `render-code-form`
 
 
 
-??? tip "(defmulti)"
+??? tip  "(`defmulti`)"
+
     ```clojure
     (defmulti render-code-form (fn [m] (-> m :verb keyword)))
     ```
+
 ### render-code-form :default
 
 ```clojure
 (render-code-form {:keys [docstring raw forms valid-call] :as m})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :default
       [{:keys [docstring raw forms valid-call] :as m}]
@@ -157,7 +203,8 @@ Create code block from given string `s`
 (render-code-form {:keys [docstring raw forms valid-call] :as m})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :ns
       [{:keys [docstring raw forms valid-call] :as m}]
@@ -169,7 +216,8 @@ Create code block from given string `s`
 (render-code-form {:keys [docstring raw forms valid-call method-value verb] :as m})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :defmethod
       [{:keys [docstring raw forms valid-call method-value verb] :as m}]
@@ -178,8 +226,9 @@ Create code block from given string `s`
            (when docstring (str docstring "\n\n"))
            (render-valid-call valid-call)
            "\n\n"
-           "??? info \"(" verb ")\"\n"
-           (code-block raw 4)
+           (admonition {:content (code-block raw 0) :type "info"
+                        :title (str "(" (code-inline verb) ")")
+                        :optional true})
            "\n"))
     ```
 ### render-code-form :comment
@@ -188,7 +237,8 @@ Create code block from given string `s`
 (render-code-form {:keys [raw] :as m})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-code-form :comment
       [{:keys [raw] :as m}]
@@ -199,17 +249,20 @@ Create code block from given string `s`
 
 
 
-??? tip "(defmulti)"
+??? tip  "(`defmulti`)"
+
     ```clojure
     (defmulti render-form :type)
     ```
+
 ### render-form :default
 
 ```clojure
 (render-form {:keys [docstring raw]})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-form :default [{:keys [docstring raw]}]
       (str docstring "\n\n" (code-block raw)))
@@ -223,7 +276,8 @@ This is a comment for testing comments in forms
 (render-form {:keys [docstring raw forms] :as m})
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-form :comment [{:keys [docstring raw forms] :as m}]
       (if (str/starts-with? raw "=>")
@@ -241,7 +295,8 @@ keep it open the flat hierarchy is a closed system.
 (render-form m)
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod render-form :code [m]
       (render-code-form m))
@@ -257,7 +312,8 @@ Retrived function calling forms.
 (function-forms name & sigs)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn function-forms
       [name & sigs]
@@ -265,6 +321,7 @@ Retrived function calling forms.
             sigs (if (vector? (first sigs)) (list sigs) sigs)]
         (mapv #(seq (into [name] (first %))) sigs)))
     ```
+
 ## `extended-raw->forms`
 
 
@@ -273,18 +330,21 @@ Retrived function calling forms.
 
 
 
-??? tip "(defmulti)"
+??? tip  "(`defmulti`)"
+
     ```clojure
     (defmulti extended-raw->forms first)
     (defmethod extended-raw->forms :default [_] {})
     ```
+
 ### extended-raw->forms (quote defn)
 
 ```clojure
 (extended-raw->forms forms)
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod extended-raw->forms 'defn [forms]
       {:valid-call (apply function-forms (drop 1 forms))})
@@ -295,27 +355,76 @@ Retrived function calling forms.
 (extended-raw->forms forms)
 ```
 
-??? info "(defmethod)"
+??? info  "(`defmethod`)"
+
     ```clojure
     (defmethod extended-raw->forms 'defmethod [forms]
       {:valid-call (apply function-forms (second forms) (drop 3 forms))
        :method-value (nth forms 2)})
     ```
+## `evaluate-form*`
+
+Brute force elementary parser on raw string to provide when for non valid
+  forms.
+
+  We use marginalia parser and sometimes the parse function does not return as
+  valid raw form. In this case, an elementary custom algorithm is provided to
+  still provide the information to the user.
+
+
+
+??? tip  "(`defn-`)"
+
+    ```clojure
+    (defn- evaluate-form*
+      [raw {:keys [docstring] :as m}]
+      (let [docstring
+            (str (admonition
+                  {:content (str "The displayed code is not valid. "
+                                 "This is due to Marginalia's parsing code.")
+                   :type "danger" :title "Parsing error" :optional false})
+                 "\n\n"
+                 docstring)
+            forms (->> (str/split (subs raw 1 (dec (dec (count raw)))) #" " 3)
+                       (map str/trim))]
+        (assoc m :docstring docstring :forms forms)))
+    ```
+
+## `evaluate-form`
+
+```clojure
+(evaluate-form raw m)
+```
+
+??? tip  "(`defn`)"
+
+    ```clojure
+    (defn evaluate-form [raw m]
+      (try
+        (binding [clojure.tools.reader/*read-eval* false]
+          {:forms (clojure.tools.reader/read-string raw)})
+        (catch Exception _
+          (println "\nParser mistake from marginalia, attempt to rescue with brute force.")
+          (println (str raw "\n"))
+          (evaluate-form* raw m))))
+    ```
+
 ## `raw->forms`
 
 ```clojure
-(raw->forms raw)
+(raw->forms {:keys [raw] :as m})
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
-    (defn ^{:meta-data :true} raw->forms [raw]
-      (binding [clojure.tools.reader/*read-eval* false]
-        (let [forms (clojure.tools.reader/read-string raw)
-              verb (first forms) name (second forms)]
-          (merge {:forms forms :verb verb :var name}
-                 (extended-raw->forms forms)))))
+    (defn ^{:meta-data :true} raw->forms [{:keys [raw] :as m}]
+      (let [{:keys [forms] :as m} (evaluate-form raw m)
+            verb (first forms)
+            name (second forms)]
+        (merge m {:forms forms :verb verb :var name} (extended-raw->forms forms))))
     ```
+
 comment here
 
 ## `save-md`
@@ -326,7 +435,8 @@ Save markdown built from clojure source.
 (save-md filename options)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn save-md
       [filename options]
@@ -334,12 +444,13 @@ Save markdown built from clojure source.
         (clojure.java.io/make-parents target)
         (when-not (:append options)
           (spit target ""))
-        (doseq [{:keys [raw type] :as all} (p/parse-file filename)]
+        (doseq [{:keys [type] :as all} (p/parse-file filename)]
           (let [all (cond-> all
-                      (and (= type :code) (:raw all)) (merge (raw->forms raw))
+                      (and (= type :code) (:raw all)) (merge (raw->forms all))
                       :always identity)]
             (spit target (render-form all) :append true)))))
     ```
+
 ## `multidoc!`
 
 Generate an output file for each of provided namespace.
@@ -348,7 +459,8 @@ Generate an output file for each of provided namespace.
 (multidoc! docs files options)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn multidoc!
       [docs files options]
@@ -358,18 +470,21 @@ Generate an output file for each of provided namespace.
               target-filename (str docs "/" (str/replace (:ns file-ns) #"\." "/") ".md")]
           (save-md filename (assoc options :target target-filename)))))
     ```
+
 ## `uberdoc!`
 
 ```clojure
 (uberdoc! docs files options)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn uberdoc! [docs files options]
       (doseq [filename files]
         (save-md filename (assoc options :append true :target docs))))
     ```
+
 ## Rich Comment
 
 ```clojure

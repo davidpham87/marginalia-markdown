@@ -5,7 +5,8 @@ Simple markdown conversion with some cool features, such as math rendering
 
 
 
-??? tip "(ns)"
+??? tip  "(`ns`)"
+
     ```clojure
     (ns materiala.core
       "Simple markdown conversion with some cool features, such as math rendering
@@ -17,19 +18,23 @@ Simple markdown conversion with some cool features, such as math rendering
                 [materiala.markdown]
                 [materiala.extensions.core]))
     ```
+
 ## `*docs*`
 
 
 
-??? tip "(def)"
+??? tip  "(`def`)"
+
     ```clojure
     (def ^{:dynamic true} *docs* "./doc")
     ```
+
 ## `cli-opts`
 
 
 
-??? tip "(def)"
+??? tip  "(`def`)"
+
     ```clojure
     (def cli-opts
       [["-d" "--dir DIR" "Directory into which the documentation will be written" :default "./doc"]
@@ -46,6 +51,7 @@ Simple markdown conversion with some cool features, such as math rendering
                                      If not given will be taken from project.clj"]
        ["-h" "--help" "Show this help"]])
     ```
+
 ## `run-materiala`
 
 Default generation: given a collection of filepaths in a project, find the .clj
@@ -62,7 +68,8 @@ Default generation: given a collection of filepaths in a project, find the .clj
 (run-materiala & args)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn run-materiala
       [& args]
@@ -108,14 +115,17 @@ Default generation: given a collection of filepaths in a project, find the .clj
             (println "Wrong number of arguments passed to Marginalia.")
             (println (:summary user-parsed-options))))))
     ```
+
 ## `-main`
 
 ```clojure
 (-main & args)
 ```
 
-??? tip "(defn)"
+??? tip  "(`defn`)"
+
     ```clojure
     (defn -main [& args]
       (apply run-materiala args))
     ```
+
