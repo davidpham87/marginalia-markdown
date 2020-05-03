@@ -37,11 +37,12 @@ Add the following dependency to your `deps.edn`
 
 ``` clojure
 materiala {:git/url "https://github.com/davidpham87/materiala/"
-           :sha "d8fb049709819af52af0f0bfe7423dc8b4f94c7d"}
+           :sha "b4f85c96b1bf9b96b47714e751b6bff6196533bb"}
 ```
 
-Note the *group-id* and *artifact-id* of the package might change once I get
-enough money to buy a domain.
+Change for the latest *sha* code, if required. Note the *group-id* and
+*artifact-id* of the package might change once I get enough money to buy a
+domain.
 
 ## Status
 
