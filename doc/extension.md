@@ -98,7 +98,7 @@ Then you can just call it (make sure `materiala` is on your classpath)
 clojure -m user.doc.ns src
 ```
 
-g## Limitation
+## Limitation
 
 The `default` symbol or `:default` key are reserved because on how multimethod
 works.
