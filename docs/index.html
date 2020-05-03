@@ -673,16 +673,20 @@ domain.</p>
 <h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 <p>Status: <strong>alpha</strong>, although I will follow
 <a href="https://www.youtube.com/watch?v=oyLBGkS5ICk">spec-ulation</a> to give my best to
-avoid breaking changes. I want to be a nice person, so I will do my best to not break
-your code. The biggest issue is the library leverages on marginalia's parser.</p>
+avoid breaking changes. I want to be a nice person, so I will make sure to not
+break your code. The biggest issue is the library leverages on marginalia's
+parser.</p>
 <h2 id="technical-solution">Technical Solution<a class="headerlink" href="#technical-solution" title="Permanent link">&para;</a></h2>
-<p>Marginalia API was <em>easier</em> to leverage (and marginalia had a nice website),
-although codox (because neanderthal and the uncomplicate ecosystem) was
-considered for usage and extension by coding a specific writer.</p>
+<p>Marginalia API was <em>easier</em> to leverage (and marginalia had a nice website), so
+the library is build on its parser.</p>
+<p>As alternative, codox (on which neanderthal and the uncomplicate ecosystem
+built their documentation) was also considered for usage and extension by
+coding a specific writer. However, most of the function codox writer are
+private and I did not want to depend on private api.</p>
 <h2 id="is-it-a-good-idea">Is it a good idea?<a class="headerlink" href="#is-it-a-good-idea" title="Permanent link">&para;</a></h2>
 <p>Well... Smashing strings together and having a DSL for representing data
 definitively goes against Clojure's philosophy and main lessons.</p>
-<p>But from this particular problem, I just wanted to have some user friendly
+<p>But for this particular problem, I just wanted to have some user friendly and
 searchable docs for my coworkers/friends and thanks to Lisp homoiconicity and
 Clojure simplicity, parsing is not <em>too</em> hard. For big open source libraries
 published on Clojars, I would still look at <a href="https://cljdoc.org/">cljdoc</a>.</p>

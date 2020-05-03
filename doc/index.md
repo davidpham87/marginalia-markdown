@@ -48,21 +48,26 @@ domain.
 
 Status: **alpha**, although I will follow
 [spec-ulation](https://www.youtube.com/watch?v=oyLBGkS5ICk) to give my best to
-avoid breaking changes. I want to be a nice person, so I will do my best to not break
-your code. The biggest issue is the library leverages on marginalia's parser.
+avoid breaking changes. I want to be a nice person, so I will make sure to not
+break your code. The biggest issue is the library leverages on marginalia's
+parser.
 
 ## Technical Solution
 
-Marginalia API was *easier* to leverage (and marginalia had a nice website),
-although codox (because neanderthal and the uncomplicate ecosystem) was
-considered for usage and extension by coding a specific writer.
+Marginalia API was *easier* to leverage (and marginalia had a nice website), so
+the library is build on its parser.
+
+As alternative, codox (on which neanderthal and the uncomplicate ecosystem
+built their documentation) was also considered for usage and extension by
+coding a specific writer. However, most of the function codox writer are
+private and I did not want to depend on private api.
 
 ## Is it a good idea?
 
 Well... Smashing strings together and having a DSL for representing data
 definitively goes against Clojure's philosophy and main lessons.
 
-But from this particular problem, I just wanted to have some user friendly
+But for this particular problem, I just wanted to have some user friendly and
 searchable docs for my coworkers/friends and thanks to Lisp homoiconicity and
 Clojure simplicity, parsing is not *too* hard. For big open source libraries
 published on Clojars, I would still look at [cljdoc](https://cljdoc.org/).
