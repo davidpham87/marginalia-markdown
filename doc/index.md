@@ -24,7 +24,7 @@ pip3 install mkdocs-material mkdocs-awesome-pages-plugin
 
 mkdir doc # save the output here
 # parse your src folder and generate the files into ./doc
-clojure -Sdeps '{:deps {materiala {:git/url "https://github.com/davidpham87/materiala/" :sha "cc3a44f2f71994e794ea7f91d2525e6402e284d3"}}}' -m materiala.core src
+clojure -Sdeps '{:deps {materiala {:git/url "https://github.com/davidpham87/materiala/" :sha "54b466714e8cf0b62c169895ea5b6df44fa3558f"}}}' -m materiala.core src
 
 mkdocs build # release, use `mkdocs serve` for dev
 cd doc && python3 -m http.server
@@ -37,7 +37,7 @@ Add the following dependency to your `deps.edn`
 
 ``` clojure
 materiala {:git/url "https://github.com/davidpham87/materiala/"
-           :sha "cc3a44f2f71994e794ea7f91d2525e6402e284d3"}
+           :sha "54b466714e8cf0b62c169895ea5b6df44fa3558f"}
 ```
 
 Change for the latest *sha* code, if required. Note the *group-id* and
